@@ -1,4 +1,4 @@
-[[<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
@@ -22,7 +22,7 @@
 </head>
 <body class="bg-dark-900 text-gray-100 font-sans antialiased min-h-screen flex selection:bg-blue-600 selection:text-white overflow-x-hidden">
 
-    <!-- LEFT SIDEBAR (Fixed & Stable) -->
+    <!-- LEFT SIDEBAR (Fixed) -->
     <aside class="w-64 bg-dark-800 border-r border-dark-700 flex flex-col justify-between p-4 select-none fixed top-0 left-0 h-screen z-20">
         <div>
             <div class="flex items-center space-x-3 px-2 mb-8 mt-2">
@@ -42,9 +42,6 @@
                 <a href="#" onclick="switchPage('store')" id="nav-store" class="flex items-center space-x-3 px-3 py-2.5 rounded-xl text-gray-400 hover:text-white hover:bg-dark-700/50 transition">
                     <i class="fa-solid fa-cart-shopping text-base w-5"></i><span>Order Store</span>
                 </a>
-                <a href="https://dash.pedrahosting.top" target="_blank" class="flex items-center space-x-3 px-3 py-2.5 rounded-xl text-gray-400 hover:text-white hover:bg-dark-700/50 transition">
-                    <i class="fa-solid fa-cloud text-base w-5"></i><span>VPS Panel</span>
-                </a>
                 <a href="https://discord.gg/Spbt6mxzFD" target="_blank" class="flex items-center space-x-3 px-3 py-2.5 rounded-xl text-gray-400 hover:text-white hover:bg-dark-700/50 transition">
                     <i class="fa-brands fa-discord text-base w-5"></i><span>Discord Support</span>
                 </a>
@@ -57,26 +54,28 @@
                     <span id="user-initial">I</span>
                 </div>
                 <div class="truncate">
-                    <div class="text-sm font-semibold text-white truncate" id="user-name-display">Iskandar</div>
-                    <div class="text-xs text-blue-400 font-medium" id="user-balance">Balance: €2,000 EUR</div>
+                    <div class="text-sm font-semibold text-white truncate" id="user-name-display">Guest User</div>
+                    <div class="text-xs text-gray-400 font-medium" id="user-status-text">Not Linked</div>
                 </div>
             </div>
-            <button onclick="discordLogin()" class="text-[#5865F2] hover:text-white transition p-1" title="Login with Discord"><i class="fa-brands fa-discord text-lg"></i></button>
+            <!-- Bouton Link Account wela Login Direct -->
+            <a href="#" id="discord-auth-btn" onclick="openDiscordOAuth()" class="text-[#5865F2] hover:text-white transition p-1" title="Link Discord Account"><i class="fa-brands fa-discord text-lg"></i></a>
         </div>
     </aside>
 
-    <!-- MAIN CONTENT AREA (Pushed to the right to clear the fixed sidebar) -->
+    <!-- MAIN CONTENT AREA -->
     <main class="flex-grow flex flex-col justify-between ml-64 min-h-screen w-[calc(100%-16rem)]">
         
         <header class="border-b border-dark-700 bg-dark-800/40 backdrop-blur px-6 py-4 flex items-center justify-between">
             <div class="text-sm text-gray-400 font-medium">
-                <i class="fa-regular fa-clock mr-1"></i> 05:40 PM &nbsp;|&nbsp; 
-                <i class="fa-regular fa-calendar-days ml-2 mr-1"></i> Saturday, October 3, 2026[cite: 4] &nbsp;|&nbsp; 
-                <i class="fa-solid fa-crown ml-2 mr-1 text-amber-400"></i> Member for 1 month[cite: 4]
+                <i class="fa-regular fa-clock mr-1"></i> 05:41 PM &nbsp;|&nbsp; 
+                <i class="fa-regular fa-calendar-days ml-2 mr-1"></i> Saturday, October 3, 2026 &nbsp;|&nbsp; 
+                <i class="fa-solid fa-crown ml-2 mr-1 text-amber-400"></i> Pedra Hosting Client
             </div>
-            <a href="https://discord.gg/Spbt6mxzFD" target="_blank" class="px-3 py-1.5 bg-[#5865F2]/20 text-indigo-300 border border-[#5865F2]/30 rounded-lg text-xs font-semibold flex items-center space-x-2 hover:bg-[#5865F2] hover:text-white transition">
-                <i class="fa-brands fa-discord"></i><span>Join Discord</span>
-            </a>
+            <!-- Bouton Linked Account f l Header zeda -->
+            <button onclick="openDiscordOAuth()" class="px-3 py-1.5 bg-[#5865F2]/20 text-indigo-300 border border-[#5865F2]/30 rounded-lg text-xs font-semibold flex items-center space-x-2 hover:bg-[#5865F2] hover:text-white transition">
+                <i class="fa-brands fa-discord"></i><span id="header-link-text">Linked Account</span>
+            </button>
         </header>
 
         <div class="p-10 max-w-7xl mx-auto w-full flex-grow space-y-8">
@@ -85,16 +84,18 @@
             <div id="page-dashboard" class="page-section space-y-8">
                 <div class="bg-gradient-to-r from-dark-800 to-dark-700 border border-dark-600 rounded-3xl p-8 relative overflow-hidden shadow-xl">
                     <div class="relative z-10">
-                        <div class="text-xs font-bold tracking-wider text-blue-400 uppercase mb-2">GOOD EVENING</div>
-                        <h1 class="text-4xl font-extrabold text-white mb-3" id="welcome-heading">Welcome back, Iskandar 👋[cite: 4]</h1>
-                        <p class="text-gray-400 text-sm max-w-xl">Everything about your services, invoices and support in one place.</p>
+                        <div class="text-xs font-bold tracking-wider text-blue-400 uppercase mb-2">CLIENT DASHBOARD</div>
+                        <h1 class="text-4xl font-extrabold text-white mb-3" id="welcome-heading">Welcome to Pedra Hosting 👋</h1>
+                        <p class="text-gray-400 text-sm max-w-xl">Link your Discord account to manage your game servers, orders, and tickets.</p>
                         
                         <div class="mt-6 inline-flex items-center space-x-4 bg-dark-900/90 border border-dark-600 px-5 py-3 rounded-2xl">
-                            <div class="w-10 h-10 rounded-full bg-dark-700 border border-dark-600 flex items-center justify-center font-bold text-white" id="badge-initial">I</div>
+                            <div class="w-10 h-10 rounded-full bg-dark-700 border border-dark-600 flex items-center justify-center font-bold text-white overflow-hidden" id="badge-avatar-box">
+                                <span id="badge-initial">G</span>
+                            </div>
                             <div>
-                                <div class="text-sm font-semibold text-white" id="badge-username">Iskandar</div>
-                                <div class="text-xs text-emerald-400 font-bold flex items-center space-x-1 mt-0.5">
-                                    <i class="fa-solid fa-circle-check text-[10px]"></i><span>VERIFIED ACCOUNT</span>
+                                <div class="text-sm font-semibold text-white" id="badge-username">Guest Account</div>
+                                <div class="text-xs text-amber-400 font-bold flex items-center space-x-1 mt-0.5" id="badge-status">
+                                    <i class="fa-solid fa-circle-exclamation text-[10px]"></i><span>UNVERIFIED - PLEASE LINK DISCORD</span>
                                 </div>
                             </div>
                         </div>
@@ -115,22 +116,9 @@
                         <div class="text-sm font-semibold text-gray-200">Open Tickets</div>
                     </div>
                     <div class="bg-dark-800 border border-dark-700 rounded-2xl p-6">
-                        <div class="text-2xl font-extrabold text-white mb-1 font-mono">€2,000</div>
+                        <div class="text-2xl font-extrabold text-white mb-1 font-mono">€0.00</div>
                         <div class="text-sm font-semibold text-gray-200">Credits</div>
                     </div>
-                </div>
-
-                <div class="bg-dark-800 border border-dark-700 rounded-2xl p-6 flex items-center justify-between">
-                    <div class="flex items-center space-x-4">
-                        <div class="w-12 h-12 rounded-2xl bg-[#5865F2] flex items-center justify-center text-white text-2xl shadow-lg">
-                            <i class="fa-brands fa-discord"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-lg font-bold text-white">Discord Support & Tickets</h3>
-                            <p class="text-sm text-gray-400">Need instant help? Open a ticket on our official Discord server.</p>
-                        </div>
-                    </div>
-                    <a href="https://discord.gg/Spbt6mxzFD" target="_blank" class="px-6 py-3 bg-[#5865F2] hover:bg-[#4752C4] text-white font-medium rounded-xl text-sm transition">Open Discord Ticket</a>
                 </div>
             </div>
 
@@ -142,55 +130,24 @@
                 </div>
                 <div id="services-container" class="space-y-4">
                     <div class="bg-dark-800 border border-dark-700 rounded-2xl p-6 text-center text-gray-400">
-                        No active services yet. Click Order New Server to deploy.
+                        Please link your Discord account to view and deploy servers.
                     </div>
                 </div>
             </div>
 
             <!-- PAGE 3: ORDER STORE -->
             <div id="page-store" class="page-section space-y-6 hidden">
-                <h2 class="text-2xl font-bold text-white mb-2">Deploy New Game Server or Bot</h2>
-                <p class="text-gray-400 text-sm mb-6">Select your hosting infrastructure package below:</p>
+                <h2 class="text-2xl font-bold text-white mb-2">Deploy Game Server</h2>
+                <p class="text-gray-400 text-sm mb-6">Select your package:</p>
                 
                 <div class="grid grid-cols-4 gap-6">
-                    <div class="bg-dark-800 border border-dark-700 rounded-2xl p-6 flex flex-col justify-between hover:border-blue-500 transition">
+                    <div class="bg-dark-800 border border-dark-700 rounded-2xl p-6 flex flex-col justify-between">
                         <div>
                             <div class="text-blue-400 text-xs font-bold uppercase mb-1">Game Server</div>
                             <h3 class="text-xl font-bold text-white mb-3">SA-MP Hosting</h3>
-                            <div class="text-2xl font-extrabold text-white mb-4">€3.99<span class="text-xs text-gray-400">/mo</span></div>
-                            <p class="text-xs text-gray-400 mb-6">High performance San Andreas Multiplayer hosting with 1GB RAM & DDoS protection.</p>
+                            <div class="text-2xl font-extrabold text-white mb-4">€3.99</div>
                         </div>
-                        <button onclick="openOrderModal('SA-MP Hosting')" class="w-full py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-medium rounded-xl text-sm transition">Order Now</button>
-                    </div>
-
-                    <div class="bg-dark-800 border border-dark-700 rounded-2xl p-6 flex flex-col justify-between hover:border-blue-500 transition">
-                        <div>
-                            <div class="text-blue-400 text-xs font-bold uppercase mb-1">Game Server</div>
-                            <h3 class="text-xl font-bold text-white mb-3">MTA Hosting</h3>
-                            <div class="text-2xl font-extrabold text-white mb-4">€4.49<span class="text-xs text-gray-400">/mo</span></div>
-                            <p class="text-xs text-gray-400 mb-6">Multi Theft Auto optimized nodes with low latency and instant script setup.</p>
-                        </div>
-                        <button onclick="openOrderModal('MTA Hosting')" class="w-full py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-medium rounded-xl text-sm transition">Order Now</button>
-                    </div>
-
-                    <div class="bg-dark-800 border border-dark-700 rounded-2xl p-6 flex flex-col justify-between hover:border-blue-500 transition">
-                        <div>
-                            <div class="text-blue-400 text-xs font-bold uppercase mb-1">Game Server</div>
-                            <h3 class="text-xl font-bold text-white mb-3">Minecraft Host</h3>
-                            <div class="text-2xl font-extrabold text-white mb-4">€5.99<span class="text-xs text-gray-400">/mo</span></div>
-                            <p class="text-xs text-gray-400 mb-6">Support for Paper, Spigot, Forge with custom plugin file manager access.</p>
-                        </div>
-                        <button onclick="openOrderModal('Minecraft Hosting')" class="w-full py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-medium rounded-xl text-sm transition">Order Now</button>
-                    </div>
-
-                    <div class="bg-dark-800 border border-dark-700 rounded-2xl p-6 flex flex-col justify-between hover:border-[#5865F2] transition">
-                        <div>
-                            <div class="text-[#5865F2] text-xs font-bold uppercase mb-1">Automation</div>
-                            <h3 class="text-xl font-bold text-white mb-3">Discord Bot Host</h3>
-                            <div class="text-2xl font-extrabold text-white mb-4">€1.99<span class="text-xs text-gray-400">/mo</span></div>
-                            <p class="text-xs text-gray-400 mb-6">24/7 Node.js & Python bot hosting with auto-restart and console logs.</p>
-                        </div>
-                        <button onclick="openOrderModal('Discord Bot Hosting')" class="w-full py-2.5 bg-[#5865F2] hover:bg-[#4752C4] text-white font-medium rounded-xl text-sm transition">Order Now</button>
+                        <button onclick="alert('Please Link your Discord account first!')" class="w-full py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-medium rounded-xl text-sm transition">Order Now</button>
                     </div>
                 </div>
             </div>
@@ -198,44 +155,21 @@
         </div>
 
         <footer class="border-t border-dark-700 bg-dark-800/30 py-4 px-6 text-center text-xs text-gray-500">
-            <p>&copy; 2026 Pedra Hosting. All rights reserved. &bull; <a href="https://discord.gg/Spbt6mxzFD" target="_blank" class="text-blue-400 hover:underline">Discord Support</a></p>
+            <p>&copy; 2026 Pedra Hosting. All rights reserved.</p>
         </footer>
 
     </main>
 
-    <!-- ORDER FORM MODAL -->
-    <div id="order-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
-        <div class="bg-dark-800 border border-dark-700 rounded-3xl w-full max-w-md p-8 relative shadow-2xl">
-            <button onclick="closeOrderModal()" class="absolute top-6 right-6 text-gray-400 hover:text-white"><i class="fa-solid fa-xmark text-lg"></i></button>
-            <h3 class="text-xl font-bold text-white mb-1" id="modal-service-title">Configure Server</h3>
-            <p class="text-xs text-gray-400 mb-6">Enter your details to finalize deployment.</p>
-
-            <form onsubmit="submitOrder(event)" class="space-y-4">
-                <div>
-                    <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Server Name / Host Name</label>
-                    <input type="text" id="order-hostname" required class="w-full bg-dark-900 border border-dark-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-blue-500" placeholder="e.g. My-SA-MP-Server">
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Email Address</label>
-                    <input type="email" id="order-email" required class="w-full bg-dark-900 border border-dark-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-blue-500" placeholder="iskandar@example.com">
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Username</label>
-                    <input type="text" id="order-username" required class="w-full bg-dark-900 border border-dark-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-blue-500" value="Iskandar">
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-gray-300 uppercase mb-1">Panel Password</label>
-                    <input type="password" id="order-password" required class="w-full bg-dark-900 border border-dark-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-blue-500" placeholder="••••••••">
-                </div>
-                <button type="submit" class="w-full py-3 bg-blue-600 hover:bg-blue-500 text-white font-medium rounded-xl shadow-lg shadow-blue-600/30 transition">Continue & Deploy</button>
-            </form>
-        </div>
-    </div>
-
     <!-- SCRIPTS -->
     <script>
-        let selectedService = '';
-        let userServices = JSON.parse(localStorage.getItem('pedra_services')) || [];
+        // ⚙️ حط رابط الـ OAuth2 متاعك هنا (من Discord Developer Portal -> OAuth2 -> URL Generator)
+        // اختر Scope: identify وربط مع رابط موقعك الحالي (مثلا github pages wala IP mte3k)
+        const DISCORD_OAUTH_URL = 'https://discord.com/oauth2/authorize?client_id=1548760387418202282&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A8080&scope=email+guilds.join+connections';
+
+        function openDiscordOAuth() {
+            //ama ken tحب testier bel local storage wela redirection m3a bot link mte3k:
+            window.location.href = DISCORD_OAUTH_URL;
+        }
 
         function switchPage(pageId) {
             document.querySelectorAll('.page-section').forEach(el => el.classList.add('hidden'));
@@ -243,84 +177,41 @@
             
             document.getElementById('page-' + pageId).classList.remove('hidden');
             document.getElementById('nav-' + pageId).classList.add('bg-blue-600/10', 'text-blue-400', 'border', 'border-blue-500/20');
-            
-            if (pageId === 'services') renderServices();
         }
 
-        function openOrderModal(serviceName) {
-            selectedService = serviceName;
-            document.getElementById('modal-service-title').innerText = 'Configure ' + serviceName;
-            document.getElementById('order-modal').classList.remove('hidden');
-        }
+        // Auto detect user from URL or LocalStorage on page load
+        window.onload = () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            let username = urlParams.get('username');
+            let avatar = urlParams.get('avatar');
 
-        function closeOrderModal() {
-            document.getElementById('order-modal').classList.add('hidden');
-        }
-
-        function submitOrder(e) {
-            e.preventDefault();
-            const hostname = document.getElementById('order-hostname').value;
-            const email = document.getElementById('order-email').value;
-            const username = document.getElementById('order-username').value;
-            const now = new Date().toLocaleDateString();
-
-            const newService = { name: hostname, type: selectedService, time: now, status: 'Running' };
-            userServices.push(newService);
-            localStorage.setItem('pedra_services', JSON.stringify(userServices));
-
-            // Envoyer la requête au Backend pour poster le Log sur Discord
-            fetch('/api/deploy-log', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ serverName: hostname, type: selectedService, username, email })
-            }).catch(err => console.log('Log sent locally or pending backend connection.'));
-
-            alert('Server successfully deployed and logs sent to Discord!');
-            closeOrderModal();
-            switchPage('services');
-        }
-
-        function renderServices() {
-            const container = document.getElementById('services-container');
-            document.getElementById('stat-active-services').innerText = userServices.length;
-            
-            if (userServices.length === 0) {
-                container.innerHTML = `<div class="bg-dark-800 border border-dark-700 rounded-2xl p-6 text-center text-gray-400">No active services yet. Click Order New Server to deploy.</div>`;
-                return;
+            // Kan mouch mawjoud f URL, nlawej f localStorage
+            if (!username) {
+                username = localStorage.getItem('pedra_discord_user');
+                avatar = localStorage.getItem('pedra_discord_avatar');
+            } else {
+                // Save to localStorage
+                localStorage.setItem('pedra_discord_user', username);
+                localStorage.setItem('pedra_discord_avatar', avatar);
             }
 
-            container.innerHTML = userServices.map(s => `
-                <div class="bg-dark-800 border border-dark-700 rounded-2xl p-6 flex items-center justify-between">
-                    <div>
-                        <h4 class="text-base font-bold text-white">${s.name}</h4>
-                        <p class="text-xs text-gray-400">Type: ${s.type} &bull; Created: ${s.time}</p>
-                    </div>
-                    <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">${s.status}</span>
-                </div>
-            `).join('');
-        }
-
-        function discordLogin() {
-            window.location.href = '/auth/discord';
-        }
-
-        // Charger les données utilisateur connectées si disponibles dans l'URL ou localStorage
-        window.onload = () => {
-            renderServices();
-            const urlParams = new URLSearchParams(window.location.search);
-            const username = urlParams.get('username');
-            const avatar = urlParams.get('avatar');
             if (username) {
                 document.getElementById('user-name-display').innerText = username;
                 document.getElementById('badge-username').innerText = username;
                 document.getElementById('user-initial').innerText = username.charAt(0).toUpperCase();
                 document.getElementById('badge-initial').innerText = username.charAt(0).toUpperCase();
-                if(avatar) {
+                document.getElementById('user-status-text').innerText = 'Verified ✅';
+                document.getElementById('user-status-text').className = 'text-xs text-emerald-400 font-medium';
+                document.getElementById('badge-status').innerHTML = '<i class="fa-solid fa-circle-check text-[10px]"></i><span>VERIFIED DISCORD ACCOUNT</span>';
+                document.getElementById('badge-status').className = 'text-xs text-emerald-400 font-bold flex items-center space-x-1 mt-0.5';
+                document.getElementById('header-link-text').innerText = 'Account Linked';
+
+                if (avatar) {
                     document.getElementById('user-avatar-container').innerHTML = `<img src="${avatar}" class="w-full h-full object-cover">`;
+                    document.getElementById('badge-avatar-box').innerHTML = `<img src="${avatar}" class="w-full h-full object-cover">`;
                 }
             }
         };
     </script>
 </body>
 </html>
-](https://discord.com/oauth2/authorize?client_id=1548760387418202282&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A8080&scope=email+guilds.join+connections)](https://discord.com/oauth2/authorize?client_id=1548760387418202282&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A8080&scope=email+guilds.join+connections)
