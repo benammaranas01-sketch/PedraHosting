@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PedraHosting - Sanfour Edition</title>
+    <title>R4X Hosting - Sanfour Edition</title>
     <style>
         * {
             margin: 0;
@@ -70,7 +70,6 @@
             box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
         }
         
-        /* Pages */
         .page {
             display: none;
             padding: 50px 5%;
@@ -85,11 +84,10 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Hero Section (Home) - Background Image Applied Here */
+        /* Hero Section */
         .hero {
             text-align: center;
             padding: 80px 20px;
-            /* وضع صورة السيرفرات كخلفية مع طبقة تغميق خفيفة لوضوح الكتابة */
             background: linear-gradient(rgba(4, 8, 20, 0.75), rgba(4, 8, 20, 0.85)), url('pedra_background.jpg');
             background-size: cover;
             background-position: center;
@@ -192,155 +190,6 @@
             font-size: 14px;
             font-weight: 500;
         }
-
-        /* Pricing Grid */
-        .section-title {
-            text-align: center;
-            font-size: 38px;
-            font-weight: 800;
-            margin-bottom: 12px;
-            background: linear-gradient(90deg, #60a5fa, #ffffff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .section-subtitle {
-            text-align: center;
-            color: #93c5fd;
-            margin-bottom: 45px;
-            font-size: 17px;
-        }
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 22px;
-            max-width: 1350px;
-            margin: 0 auto;
-        }
-        .price-card {
-            background: linear-gradient(145deg, #070e1f, #0b1530);
-            border: 1px solid rgba(30, 58, 138, 0.8);
-            border-radius: 18px;
-            padding: 30px 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            position: relative;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-        }
-        .price-card:hover {
-            border-color: rgba(96, 165, 250, 0.8);
-            transform: translateY(-6px);
-            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.2);
-        }
-        .price-card.popular {
-            background: linear-gradient(145deg, #091330, #0f2252);
-            border: 2px solid #3b82f6;
-            box-shadow: 0 10px 35px rgba(59, 130, 246, 0.3);
-        }
-        .popular-badge {
-            position: absolute;
-            top: -14px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, #3b82f6, #60a5fa);
-            color: #ffffff;
-            font-size: 12px;
-            font-weight: 700;
-            padding: 5px 16px;
-            border-radius: 20px;
-            white-space: nowrap;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
-        }
-        .card-header {
-            text-align: center;
-            margin-bottom: 25px;
-            border-bottom: 1px solid rgba(30, 58, 138, 0.8);
-            padding-bottom: 20px;
-        }
-        .card-header h3 {
-            font-size: 22px;
-            color: #ffffff;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-        .price-tag {
-            font-size: 32px;
-            font-weight: 800;
-            color: #60a5fa;
-        }
-        .price-tag span {
-            font-size: 14px;
-            color: #93c5fd;
-            font-weight: normal;
-        }
-        .specs-list {
-            list-style: none;
-            margin-bottom: 25px;
-        }
-        .specs-list li {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px dashed rgba(30, 58, 138, 0.5);
-            font-size: 14px;
-            color: #cbd5e1;
-        }
-        .specs-list li span:last-child {
-            font-weight: 700;
-            color: #ffffff;
-        }
-        .payment-box {
-            background-color: rgba(7, 14, 31, 0.8);
-            border: 1px solid rgba(30, 58, 138, 0.8);
-            border-radius: 12px;
-            padding: 12px;
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 13px;
-        }
-        .payment-box .usd-price {
-            font-size: 16px;
-            font-weight: 800;
-            color: #60a5fa;
-        }
-        .payment-methods {
-            text-align: right;
-            color: #93c5fd;
-            font-size: 11px;
-            line-height: 1.5;
-        }
-        .btn-order {
-            width: 100%;
-            padding: 12px;
-            border-radius: 12px;
-            border: none;
-            font-weight: 700;
-            font-size: 15px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            text-align: center;
-        }
-        .btn-default {
-            background-color: #1e3a8a;
-            color: #ffffff;
-        }
-        .btn-default:hover {
-            background-color: #2563eb;
-        }
-        .btn-highlight {
-            background: linear-gradient(135deg, #3b82f6, #60a5fa);
-            color: #ffffff;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
-        }
-        .btn-highlight:hover {
-            opacity: 0.95;
-            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
-        }
         footer {
             text-align: center;
             padding: 40px;
@@ -349,25 +198,6 @@
             font-size: 14px;
             background-color: #020408;
         }
-
-        /* Responsive */
-        @media(max-width: 1200px) {
-            .pricing-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media(max-width: 768px) {
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
-            .nav-links {
-                gap: 6px;
-            }
-            .nav-links button {
-                padding: 8px 12px;
-                font-size: 13px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -375,29 +205,25 @@
     <!-- Navbar -->
     <nav>
         <div class="logo">
-            <span>PedraHosting 🧢</span>
+            <span>R4X Hosting 🧢</span>
         </div>
         <ul class="nav-links">
             <li><button onclick="switchPage('home')" id="nav-home" class="active">Home</button></li>
-            <li><button onclick="switchPage('samp')" id="nav-samp">Host SAMP</button></li>
-            <li><button onclick="switchPage('mta')" id="nav-mta">Host MTA</button></li>
-            <li><button onclick="switchPage('bot')" id="nav-bot">Host Bot</button></li>
-            <li><button onclick="switchPage('vps')" id="nav-vps">VPS</button></li>
         </ul>
     </nav>
 
-    <!-- PAGE 1: HOME (Background image applied here) -->
+    <!-- PAGE 1: HOME -->
     <div id="page-home" class="page active">
         <div class="hero">
             <div class="sanfour-container">
                 <img src="pedra_background.jpg" alt="Sanfour Boss" class="sanfour-img">
             </div>
-            <h1>PedraHosting <span style="color: #60a5fa;">Sanfour Edition</span></h1>
+            <h1>R4X Hosting <span style="color: #60a5fa;">Sanfour Edition</span></h1>
             <p>High-performance servers protected and managed by the ultimate Sanfour squad. Lightning-fast speed & 99.9% uptime.</p>
             
             <div class="btn-group">
-                <a href="https://pedrahosting.top/" target="_blank" class="btn btn-primary">Dashboard VPS →</a>
-                <a href="https://discord.gg/Spbt6mxzFD" target="_blank" class="btn btn-secondary">💬 Join Discord</a>
+                <a href="#" class="btn btn-primary">Dashboard VPS →</a>
+                <a href="#" class="btn btn-secondary">💬 Join Discord</a>
             </div>
 
             <div class="stats">
@@ -417,348 +243,10 @@
         </div>
     </div>
 
-    <!-- PAGE 2: HOST SAMP -->
-    <div id="page-samp" class="page">
-        <h2 class="section-title">Host SA-MP Plans</h2>
-        <p class="section-subtitle">High performance SA-MP server hosting with advanced DDoS protection</p>
-        
-        <div class="pricing-grid">
-            <div class="price-card">
-                <div class="card-header">
-                    <h3>Plan 4</h3>
-                    <div class="price-tag">$4 <span>/ month</span></div>
-                </div>
-                <ul class="specs-list">
-                    <li><span>Slots</span> <span>500 👥</span></li>
-                    <li><span>RAM</span> <span>2.5 GB 🔋</span></li>
-                    <li><span>SSD Storage</span> <span>4 GB 💽</span></li>
-                    <li><span>Network</span> <span>11 GB/s 🛜</span></li>
-                    <li><span>Database</span> <span>x1 Database 🗄️</span></li>
-                </ul>
-                <div class="payment-box">
-                    <span class="usd-price">$4</span>
-                    <div class="payment-methods">Binance<br>Ooredoo: <strong>DT 22</strong><br>D17: <strong>DT 16.8</strong></div>
-                </div>
-                <a href="https://pedrahosting.top/" target="_blank" class="btn-order btn-default">Order Now</a>
-            </div>
-
-            <div class="price-card popular">
-                <div class="popular-badge">⭐ Most Popular</div>
-                <div class="card-header">
-                    <h3>Plan 3</h3>
-                    <div class="price-tag" style="color: #60a5fa;">$3 <span>/ month</span></div>
-                </div>
-                <ul class="specs-list">
-                    <li><span>Slots</span> <span>200 👥</span></li>
-                    <li><span>RAM</span> <span>2 GB 🔋</span></li>
-                    <li><span>SSD Storage</span> <span>3.5 GB 💽</span></li>
-                    <li><span>Network</span> <span>1 GB/s 🛜</span></li>
-                    <li><span>Database</span> <span>x1 Database 🗄️</span></li>
-                </ul>
-                <div class="payment-box">
-                    <span class="usd-price" style="color: #60a5fa;">$3</span>
-                    <div class="payment-methods">Binance<br>Ooredoo: <strong>DT 16.5</strong><br>D17: <strong>DT 12.6</strong></div>
-                </div>
-                <a href="https://pedrahosting.top/" target="_blank" class="btn-order btn-highlight">Order Now</a>
-            </div>
-
-            <div class="price-card">
-                <div class="card-header">
-                    <h3>Plan 2</h3>
-                    <div class="price-tag">$2 <span>/ month</span></div>
-                </div>
-                <ul class="specs-list">
-                    <li><span>Slots</span> <span>100 👥</span></li>
-                    <li><span>RAM</span> <span>1.5 GB 🔋</span></li>
-                    <li><span>SSD Storage</span> <span>3 GB 💽</span></li>
-                    <li><span>Network</span> <span>1 GB/s 🛜</span></li>
-                    <li><span>Database</span> <span>x1 Database 🗄️</span></li>
-                </ul>
-                <div class="payment-box">
-                    <span class="usd-price">$2</span>
-                    <div class="payment-methods">Binance<br>Ooredoo: <strong>DT 11</strong><br>D17: <strong>DT 8.4</strong></div>
-                </div>
-                <a href="https://pedrahosting.top/" target="_blank" class="btn-order btn-default">Order Now</a>
-            </div>
-
-            <div class="price-card">
-                <div class="card-header">
-                    <h3>Plan 1</h3>
-                    <div class="price-tag">$1 <span>/ month</span></div>
-                </div>
-                <ul class="specs-list">
-                    <li><span>Slots</span> <span>50 👥</span></li>
-                    <li><span>RAM</span> <span>1 GB 🔋</span></li>
-                    <li><span>SSD Storage</span> <span>2 GB 💽</span></li>
-                    <li><span>Network</span> <span>1 GB/s 🛜</span></li>
-                    <li><span>Database</span> <span>x1 Database 🗄</span></li>
-                </ul>
-                <div class="payment-box">
-                    <span class="usd-price">$1</span>
-                    <div class="payment-methods">Binance<br>Ooredoo: <strong>DT 5.5</strong><br>D17: <strong>DT 4.2</strong></div>
-                </div>
-                <a href="https://pedrahosting.top/" target="_blank" class="btn-order btn-default">Order Now</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- PAGE 3: HOST MTA -->
-    <div id="page-mta" class="page">
-        <h2 class="section-title">Host MTA Plans</h2>
-        <p class="section-subtitle">Lightning fast MTA server hosting with smooth performance</p>
-        
-        <div class="pricing-grid">
-            <div class="price-card">
-                <div class="card-header">
-                    <h3>Plan 4</h3>
-                    <div class="price-tag">$4 <span>/ month</span></div>
-                </div>
-                <ul class="specs-list">
-                    <li><span>Slots</span> <span>500 👥</span></li>
-                    <li><span>RAM</span> <span>2.5 GB 🔋</span></li>
-                    <li><span>SSD Storage</span> <span>4 GB 💽</span></li>
-                    <li><span>Network</span> <span>11 GB/s 🛜</span></li>
-                    <li><span>Database</span> <span>x1 Database 🗄️</span></li>
-                </ul>
-                <div class="payment-box">
-                    <span class="usd-price">$4</span>
-                    <div class="payment-methods">Binance<br>Ooredoo: <strong>DT 22</strong><br>D17: <strong>DT 16.8</strong></div>
-                </div>
-                <a href="https://pedrahosting.top/" target="_blank" class="btn-order btn-default">Order Now</a>
-            </div>
-
-            <div class="price-card popular">
-                <div class="popular-badge">⭐ Most Popular</div>
-                <div class="card-header">
-                    <h3>Plan 3</h3>
-                    <div class="price-tag" style="color: #60a5fa;">$3 <span>/ month</span></div>
-                </div>
-                <ul class="specs-list">
-                    <li><span>Slots</span> <span>200 👥</span></li>
-                    <li><span>RAM</span> <span>2 GB 🔋</span></li>
-                    <li><span>SSD Storage</span> <span>3.5 GB 💽</span></li>
-                    <li><span>Network</span> <span>1 GB/s 🛜</span></li>
-                    <li><span>Database</span> <span>x1 Database 🗄️</span></li>
-                </ul>
-                <div class="payment-box">
-                    <span class="usd-price" style="color: #60a5fa;">$3</span>
-                    <div class="payment-methods">Binance<br>Ooredoo: <strong>DT 16.5</strong><br>D17: <strong>DT 12.6</strong></div>
-                </div>
-                <a href="https://pedrahosting.top/" target="_blank" class="btn-order btn-highlight">Order Now</a>
-            </div>
-
-            <div class="price-card">
-                <div class="card-header">
-                    <h3>Plan 2</h3>
-                    <div class="price-tag">$2 <span>/ month</span></div>
-                </div>
-                <ul class="specs-list">
-                    <li><span>Slots</span> <span>100 👥</span></li>
-                    <li><span>RAM</span> <span>1.5 GB 🔋</span></li>
-                    <li><span>SSD Storage</span> <span>3 GB 💽</span></li>
-                    <li><span>Network</span> <span>1 GB/s 🛜</span></li>
-                    <li><span>Database</span> <span>x1 Database 🗄️</span></li>
-                </ul>
-                <div class="payment-box">
-                    <span class="usd-price">$2</span>
-                    <div class="payment-methods">Binance<br>Ooredoo: <strong>DT 11</strong><br>D17: <strong>DT 8.4</strong></div>
-                </div>
-                <a href="https://pedrahosting.top/" target="_blank" class="btn-order btn-default">Order Now</a>
-            </div>
-
-            <div class="price-card">
-                <div class="card-header">
-                    <h3>Plan 1</h3>
-                    <div class="price-tag">$1 <span>/ month</span></div>
-                </div>
-                <ul class="specs-list">
-                    <li><span>Slots</span> <span>50 👥</span></li>
-                    <li><span>RAM</span> <span>1 GB 🔋</span></li>
-                    <li><span>SSD Storage</span> <span>2 GB 💽</span></li>
-                    <li><span>Network</span> <span>1 GB/s 🛜</span></li>
-                    <li><span>Database</span> <span>x1 Database 🗄</span></li>
-                </ul>
-                <div class="payment-box">
-                    <span class="usd-price">$1</span>
-                    <div class="payment-methods">Binance<br>Ooredoo: <strong>DT 5.5</strong><br>D17: <strong>DT 4.2</strong></div>
-                </div>
-                <a href="https://pedrahosting.top/" target="_blank" class="btn-order btn-default">Order Now</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- PAGE 4: HOST BOT -->
-    <div id="page-bot" class="page">
-        <h2 class="section-title">Host Bot Plans</h2>
-        <p class="section-subtitle">Reliable Discord & Telegram bot hosting 24/7 without downtime</p>
-        
-        <div class="pricing-grid">
-            <div class="price-card">
-                <div class="card-header">
-                    <h3>Plan 4</h3>
-                    <div class="price-tag">$4 <span>/ month</span></div>
-                </div>
-                <ul class="specs-list">
-                    <li><span>Slots</span> <span>500 👥</span></li>
-                    <li><span>RAM</span> <span>2.5 GB 🔋</span></li>
-                    <li><span>SSD Storage</span> <span>4 GB 💽</span></li>
-                    <li><span>Network</span> <span>11 GB/s 🛜</span></li>
-                    <li><span>Database</span> <span>x1 Database 🗄️</span></li>
-                </ul>
-                <div class="payment-box">
-                    <span class="usd-price">$4</span>
-                    <div class="payment-methods">Binance<br>Ooredoo: <strong>DT 22</strong><br>D17: <strong>DT 16.8</strong></div>
-                </div>
-                <a href="https://pedrahosting.top/" target="_blank" class="btn-order btn-default">Order Now</a>
-            </div>
-
-            <div class="price-card popular">
-                <div class="popular-badge">⭐ Most Popular</div>
-                <div class="card-header">
-                    <h3>Plan 3</h3>
-                    <div class="price-tag" style="color: #60a5fa;">$3 <span>/ month</span></div>
-                </div>
-                <ul class="specs-list">
-                    <li><span>Slots</span> <span>200 👥</span></li>
-                    <li><span>RAM</span> <span>2 GB 🔋</span></li>
-                    <li><span>SSD Storage</span> <span>3.5 GB 💽</span></li>
-                    <li><span>Network</span> <span>1 GB/s 🛜</span></li>
-                    <li><span>Database</span> <span>x1 Database 🗄️</span></li>
-                </ul>
-                <div class="payment-box">
-                    <span class="usd-price" style="color: #60a5fa;">$3</span>
-                    <div class="payment-methods">Binance<br>Ooredoo: <strong>DT 16.5</strong><br>D17: <strong>DT 12.6</strong></div>
-                </div>
-                <a href="https://pedrahosting.top/" target="_blank" class="btn-order btn-highlight">Order Now</a>
-            </div>
-
-            <div class="price-card">
-                <div class="card-header">
-                    <h3>Plan 2</h3>
-                    <div class="price-tag">$2 <span>/ month</span></div>
-                </div>
-                <ul class="specs-list">
-                    <li><span>Slots</span> <span>100 👥</span></li>
-                    <li><span>RAM</span> <span>1.5 GB 🔋</span></li>
-                    <li><span>SSD Storage</span> <span>3 GB 💽</span></li>
-                    <li><span>Network</span> <span>1 GB/s 🛜</span></li>
-                    <li><span>Database</span> <span>x1 Database 🗄</span></li>
-                </ul>
-                <div class="payment-box">
-                    <span class="usd-price">$2</span>
-                    <div class="payment-methods">Binance<br>Ooredoo: <strong>DT 11</strong><br>D17: <strong>DT 8.4</strong></div>
-                </div>
-                <a href="https://pedrahosting.top/" target="_blank" class="btn-order btn-default">Order Now</a>
-            </div>
-
-            <div class="price-card">
-                <div class="card-header">
-                    <h3>Plan 1</h3>
-                    <div class="price-tag">$1 <span>/ month</span></div>
-                </div>
-                <ul class="specs-list">
-                    <li><span>Slots</span> <span>50 👥</span></li>
-                    <li><span>RAM</span> <span>1 GB 🔋</span></li>
-                    <li><span>SSD Storage</span> <span>2 GB 💽</span></li>
-                    <li><span>Network</span> <span>1 GB/s 🛜</span></li>
-                    <li><span>Database</span> <span>x1 Database 🗄️</span></li>
-                </ul>
-                <div class="payment-box">
-                    <span class="usd-price">$1</span>
-                    <div class="payment-methods">Binance<br>Ooredoo: <strong>DT 5.5</strong><br>D17: <strong>DT 4.2</strong></div>
-                </div>
-                <a href="https://pedrahosting.top/" target="_blank" class="btn-order btn-default">Order Now</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- PAGE 5: VPS -->
-    <div id="page-vps" class="page">
-        <h2 class="section-title">VPS Servers Plans</h2>
-        <p class="section-subtitle">Powerful VPS servers with high-speed NVMe storage for your projects</p>
-        
-        <div class="pricing-grid">
-            <div class="price-card">
-                <div class="card-header">
-                    <h3>Plan 4</h3>
-                    <div class="price-tag">$4 <span>/ month</span></div>
-                </div>
-                <ul class="specs-list">
-                    <li><span>CPU</span> <span>4 Cores ⚙️</span></li>
-                    <li><span>RAM</span> <span>4 GB 🔋</span></li>
-                    <li><span>NVMe Storage</span> <span>50 GB 💽</span></li>
-                    <li><span>Network</span> <span>11 GB/s 🛜</span></li>
-                </ul>
-                <div class="payment-box">
-                    <span class="usd-price">$4</span>
-                    <div class="payment-methods">Binance<br>Ooredoo: <strong>DT 22</strong><br>D17: <strong>DT 16.8</strong></div>
-                </div>
-                <a href="https://pedrahosting.top/" target="_blank" class="btn-order btn-default">Order Now</a>
-            </div>
-
-            <div class="price-card popular">
-                <div class="popular-badge">⭐ Most Popular</div>
-                <div class="card-header">
-                    <h3>Plan 3</h3>
-                    <div class="price-tag" style="color: #60a5fa;">$3 <span>/ month</span></div>
-                </div>
-                <ul class="specs-list">
-                    <li><span>CPU</span> <span>3 Cores ⚙️</span></li>
-                    <li><span>RAM</span> <span>3 GB 🔋</span></li>
-                    <li><span>NVMe Storage</span> <span>35 GB 💽</span></li>
-                    <li><span>Network</span> <span>1 GB/s 🛜</span></li>
-                </ul>
-                <div class="payment-box">
-                    <span class="usd-price" style="color: #60a5fa;">$3</span>
-                    <div class="payment-methods">Binance<br>Ooredoo: <strong>DT 16.5</strong><br>D17: <strong>DT 12.6</strong></div>
-                </div>
-                <a href="https://pedrahosting.top/" target="_blank" class="btn-order btn-highlight">Order Now</a>
-            </div>
-
-            <div class="price-card">
-                <div class="card-header">
-                    <h3>Plan 2</h3>
-                    <div class="price-tag">$2 <span>/ month</span></div>
-                </div>
-                <ul class="specs-list">
-                    <li><span>CPU</span> <span>2 Cores ⚙️</span></li>
-                    <li><span>RAM</span> <span>2 GB 🔋</span></li>
-                    <li><span>NVMe Storage</span> <span>25 GB 💽</span></li>
-                    <li><span>Network</span> <span>1 GB/s 🛜</span></li>
-                </ul>
-                <div class="payment-box">
-                    <span class="usd-price">$2</span>
-                    <div class="payment-methods">Binance<br>Ooredoo: <strong>DT 11</strong><br>D17: <strong>DT 8.4</strong></div>
-                </div>
-                <a href="https://pedrahosting.top/" target="_blank" class="btn-order btn-default">Order Now</a>
-            </div>
-
-            <div class="price-card">
-                <div class="card-header">
-                    <h3>Plan 1</h3>
-                    <div class="price-tag">$1 <span>/ month</span></div>
-                </div>
-                <ul class="specs-list">
-                    <li><span>CPU</span> <span>1 Core ⚙️</span></li>
-                    <li><span>RAM</span> <span>1 GB 🔋</span></li>
-                    <li><span>NVMe Storage</span> <span>15 GB 💽</span></li>
-                    <li><span>Network</span> <span>1 GB/s 🛜</span></li>
-                </ul>
-                <div class="payment-box">
-                    <span class="usd-price">$1</span>
-                    <div class="payment-methods">Binance<br>Ooredoo: <strong>DT 5.5</strong><br>D17: <strong>DT 4.2</strong></div>
-                </div>
-                <a href="https://pedrahosting.top/" target="_blank" class="btn-order btn-default">Order Text</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
     <footer>
-        <p>Powered by Sanfour Squad • PedraHosting © 2026</p>
+        <p>Powered by Sanfour Squad • R4X Hosting © 2026</p>
     </footer>
 
-    <!-- JavaScript -->
     <script>
         function switchPage(pageId) {
             document.querySelectorAll('.page').forEach(page => {
@@ -771,6 +259,5 @@
             document.getElementById('nav-' + pageId).classList.add('active');
         }
     </script>
-
 </body>
 </html>
