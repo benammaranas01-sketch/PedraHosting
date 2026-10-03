@@ -33,7 +33,7 @@
 </head>
 <body class="bg-dark-900 text-gray-100 font-sans antialiased min-h-screen flex selection:bg-blue-600 selection:text-white">
 
-    <!-- LEFT SIDEBAR (Matching User Screenshot) -->
+    <!-- LEFT SIDEBAR -->
     <aside class="w-64 bg-dark-800 border-r border-dark-700 hidden md:flex flex-col justify-between p-4 select-none">
         <div>
             <!-- Logo / Brand -->
@@ -70,7 +70,7 @@
             <div class="flex items-center space-x-3 overflow-hidden">
                 <div class="w-9 h-9 rounded-full bg-blue-600 flex items-center justify-center font-bold text-white text-sm">I</div>
                 <div class="truncate">
-                    <div class="text-sm font-semibold text-white truncate" id="sidebar-username">Iskandar</div>
+                    <div class="text-sm font-semibold text-white truncate">Iskandar</div>
                     <div class="text-xs text-blue-400 font-medium">Balance: €2,000 EUR</div>
                 </div>
             </div>
@@ -84,10 +84,14 @@
         <!-- Top Bar -->
         <header class="border-b border-dark-700 bg-dark-800/40 backdrop-blur px-6 py-4 flex items-center justify-between">
             <div class="flex items-center space-x-4">
-                <div class="text-sm text-gray-400 font-medium"><i class="fa-regular fa-calendar-days mr-2"></i><span id="current-date">Saturday, October 3, 2026</span></div>
+                <div class="text-sm text-gray-400 font-medium">
+                    <i class="fa-regular fa-clock mr-1"></i> 05:12 PM &nbsp;|&nbsp; 
+                    <i class="fa-regular fa-calendar-days ml-2 mr-1"></i> Saturday, October 3, 2026 &nbsp;|&nbsp; 
+                    <i class="fa-solid fa-crown ml-2 mr-1 text-amber-400"></i> Member for 1 month
+                </div>
             </div>
             <div class="flex items-center space-x-3">
-                <a href="https://discord.gg/Spbt6mxzFD" target="_blank" class="px-3 py-1.5 bg-blue-discord/20 text-indigo-300 border border-blue-discord/30 rounded-lg text-xs font-semibold flex items-center space-x-2 hover:bg-blue-discord hover:text-white transition">
+                <a href="https://discord.gg/Spbt6mxzFD" target="_blank" class="px-3 py-1.5 bg-[#5865F2]/20 text-indigo-300 border border-[#5865F2]/30 rounded-lg text-xs font-semibold flex items-center space-x-2 hover:bg-[#5865F2] hover:text-white transition">
                     <i class="fa-brands fa-discord"></i>
                     <span>Join Discord</span>
                 </a>
@@ -95,90 +99,133 @@
         </header>
 
         <!-- Dynamic Content Container -->
-        <div class="p-6 md:p-8 max-w-7xl mx-auto w-full flex-grow">
+        <div class="p-6 md:p-8 max-w-7xl mx-auto w-full flex-grow space-y-8">
 
-            <!-- Security Tip Banners (Matching Screenshot) -->
-            <div class="space-y-3 mb-8">
-                <div class="bg-dark-800 border border-dark-700 rounded-2xl p-4 flex items-center justify-between text-sm">
-                    <div class="flex items-center space-x-3">
-                        <i class="fa-solid fa-shield-halved text-blue-400 text-lg"></i>
-                        <span class="text-gray-300">Two-factor authentication is off — <span class="text-white font-medium">enable it to secure your account.</span></span>
-                    </div>
-                    <button onclick="alert('2FA configuration modal opened.')" class="px-3 py-1 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-xs font-semibold transition">Enable 2FA</button>
-                </div>
-            </div>
-
-            <!-- Dashboard Home Tab -->
+            <!-- TAB 1: DASHBOARD -->
             <div id="tab-dashboard" class="space-y-8">
-                <!-- Welcome Section -->
+                <!-- Welcome Section (Matching Screenshot) -->
                 <div class="bg-gradient-to-r from-dark-800 to-dark-700 border border-dark-600 rounded-3xl p-8 relative overflow-hidden shadow-xl">
                     <div class="relative z-10">
                         <div class="text-xs font-bold tracking-wider text-blue-400 uppercase mb-2">GOOD EVENING</div>
-                        <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-3">Welcome back, <span id="welcome-name">Iskandar</span> 👋</h1>
+                        <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-3">Welcome back, Iskandar 👋[cite: 4]</h1>
                         <p class="text-gray-400 text-sm max-w-xl">Everything about your services, invoices and support in one place.</p>
                         
                         <!-- Verified User Card inside banner -->
-                        <div class="mt-6 inline-flex items-center space-x-4 bg-dark-900/80 border border-dark-600 px-4 py-2.5 rounded-2xl">
-                            <div class="flex items-center space-x-2">
-                                <div class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></div>
-                                <span class="text-sm font-semibold text-white" id="badge-username">Iskandar</span>
+                        <div class="mt-6 inline-flex items-center space-x-4 bg-dark-900/90 border border-dark-600 px-5 py-3 rounded-2xl">
+                            <div class="w-10 h-10 rounded-full bg-dark-700 border border-dark-600 flex items-center justify-center font-bold text-white">I</div>
+                            <div>
+                                <div class="text-sm font-semibold text-white flex items-center space-x-2">
+                                    <span>Iskandar</span>
+                                    <span class="text-xs text-pink-400">✨</span>
+                                </div>
+                                <div class="text-xs text-emerald-400 font-bold flex items-center space-x-1 mt-0.5">
+                                    <i class="fa-solid fa-circle-check text-[10px]"></i>
+                                    <span>VERIFIED</span>
+                                </div>
                             </div>
-                            <span class="bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-xs px-2 py-0.5 rounded font-bold">VERIFIED</span>
-                            <a href="https://dash.pedrahosting.top" target="_blank" class="ml-4 px-3 py-1 bg-dark-700 hover:bg-dark-600 text-gray-200 rounded-lg text-xs font-medium transition">Manage VPS</a>
+                            <button onclick="alert('Opening account management...')" class="ml-8 px-4 py-1.5 bg-dark-700 hover:bg-dark-600 text-gray-200 rounded-xl text-xs font-semibold transition border border-dark-600">Manage</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Stats Grid (Matching Screenshot Cards) -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div class="bg-dark-800 border border-dark-700 rounded-2xl p-5">
-                        <div class="text-gray-400 text-xs font-medium mb-2 flex items-center justify-between">
-                            <span>Active Services</span>
-                            <i class="fa-solid fa-server text-blue-400"></i>
+                <!-- 4 Bottom Cards Grid (Matching Screenshot) -->
+                <div class="grid md:grid-cols-4 gap-6">
+                    <!-- Card 1: Active Services -->
+                    <div class="bg-dark-800 border border-dark-700 rounded-2xl p-6 flex flex-col justify-between hover:border-blue-500/40 transition">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-blue-600/10 border border-blue-500/20 text-blue-400 flex items-center justify-center mb-4">
+                                <i class="fa-solid fa-box text-base"></i>
+                            </div>
+                            <div class="text-3xl font-extrabold text-white mb-1">0</div>
+                            <div class="text-sm font-semibold text-gray-200">Active Services</div>
+                            <div class="text-xs text-gray-500 mt-2">No upcoming renewals</div>
                         </div>
-                        <div class="text-3xl font-bold text-white">1</div>
                     </div>
-                    <div class="bg-dark-800 border border-dark-700 rounded-2xl p-5">
-                        <div class="text-gray-400 text-xs font-medium mb-2 flex items-center justify-between">
-                            <span>Unpaid Invoices</span>
-                            <i class="fa-solid fa-file-invoice text-amber-400"></i>
+
+                    <!-- Card 2: Unpaid Invoices -->
+                    <div class="bg-dark-800 border border-dark-700 rounded-2xl p-6 flex flex-col justify-between hover:border-amber-500/40 transition">
+                        <div>
+                            <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center mb-4">
+                                <i class="fa-solid fa-file-invoice text-base"></i>
+                            </div>
+                            <div class="text-3xl font-extrabold text-white mb-1">0</div>
+                            <div class="text-sm font-semibold text-gray-200">Unpaid Invoices</div>
+                            <div class="text-xs text-gray-500 mt-2">Nothing outstanding</div>
                         </div>
-                        <div class="text-3xl font-bold text-white">0</div>
                     </div>
-                    <div class="bg-dark-800 border border-dark-700 rounded-2xl p-5">
-                        <div class="text-gray-400 text-xs font-medium mb-2 flex items-center justify-between">
-                            <span>Open Tickets</span>
-                            <i class="fa-solid fa-headset text-emerald-400"></i>
+
+                    <!-- Card 3: Open Tickets -->
+                    <div class="bg-dark-800 border border-emerald-500/40 rounded-2xl p-6 flex flex-col justify-between shadow-lg shadow-emerald-950/20">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                                    <i class="fa-solid fa-headset text-base"></i>
+                                </div>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-gray-500 text-xs"></i>
+                            </div>
+                            <div class="text-3xl font-extrabold text-white mb-1">0</div>
+                            <div class="text-sm font-semibold text-gray-200">Open Tickets</div>
+                            <div class="text-xs text-emerald-400 mt-2 font-medium">All caught up</div>
                         </div>
-                        <div class="text-3xl font-bold text-white">0</div>
                     </div>
-                    <div class="bg-dark-800 border border-dark-700 rounded-2xl p-5">
-                        <div class="text-gray-400 text-xs font-medium mb-2 flex items-center justify-between">
-                            <span>Account Credits</span>
-                            <i class="fa-solid fa-wallet text-indigo-400"></i>
+
+                    <!-- Card 4: Credits / Discord Community -->
+                    <div class="bg-dark-800 border border-dark-700 rounded-2xl p-6 flex flex-col justify-between hover:border-blue-500/40 transition">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center">
+                                    <i class="fa-solid fa-wallet text-base"></i>
+                                </div>
+                                <i class="fa-regular fa-eye-slash text-gray-500 text-xs cursor-pointer"></i>
+                            </div>
+                            <div class="text-2xl font-extrabold text-white mb-1 font-mono">€2,000</div>
+                            <div class="text-sm font-semibold text-gray-200">Credits</div>
+                            <a href="https://dash.pedrahosting.top" target="_blank" class="text-xs text-blue-400 hover:underline mt-2 inline-block font-medium">Deposit more</a>
                         </div>
-                        <div class="text-2xl font-bold text-white">€2,000</div>
                     </div>
+                </div>
+
+                <!-- Discord Community Banner Card -->
+                <div class="bg-dark-800 border border-dark-700 rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-4">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-2xl bg-[#5865F2] flex items-center justify-center text-white text-2xl shadow-lg shadow-[#5865F2]/30 flex-shrink-0">
+                            <i class="fa-brands fa-discord"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">Discord Community</h3>
+                            <p class="text-sm text-gray-400">Need instant technical support or network status alerts? Join our Discord community.</p>
+                        </div>
+                    </div>
+                    <a href="https://discord.gg/Spbt6mxzFD" target="_blank" class="px-6 py-3 bg-[#5865F2] hover:bg-[#4752C4] text-white font-medium rounded-xl text-sm transition shadow-lg shadow-[#5865F2]/20 whitespace-nowrap flex items-center space-x-2">
+                        <span>Join Discord</span>
+                        <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
                 </div>
             </div>
 
-            <!-- Services Tab (Hidden by default) -->
+            <!-- TAB 2: SERVICES -->
             <div id="tab-services" class="space-y-6 hidden">
                 <div class="flex justify-between items-center">
-                    <h2 class="text-2xl font-bold text-white">Your Active VPS & Game Servers</h2>
-                    <a href="https://dash.pedrahosting.top" target="_blank" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-sm font-semibold transition">Open Pterodactyl Panel</a>
-                </div>
-                <div class="bg-dark-800 border border-dark-700 rounded-2xl p-6">
-                    <div class="flex items-center justify-between pb-4 border-b border-dark-700">
-                        <div>
-                            <div class="text-white font-bold">Pedra-VPS-Node1 (SA-MP / VPS)</div>
-                            <div class="text-xs text-gray-400 mt-0.5">Control Panel Link: dash.pedrahosting.top</div>
-                        </div>
-                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Running</span>
+                    <div>
+                        <h2 class="text-2xl font-bold text-white">Services</h2>
+                        <p class="text-sm text-gray-400">Manage your active VPS and game server nodes.</p>
                     </div>
-                    <div class="pt-4 flex space-x-3">
-                        <a href="https://dash.pedrahosting.top" target="_blank" class="px-4 py-2 bg-blue-600/20 text-blue-400 border border-blue-500/30 rounded-xl text-xs font-semibold hover:bg-blue-600 hover:text-white transition">Manage Server</a>
-                        <a href="https://discord.gg/Spbt6mxzFD" target="_blank" class="px-4 py-2 bg-dark-700 text-gray-300 rounded-xl text-xs font-semibold hover:bg-dark-600 transition">Get Support</a>
+                    <a href="https://dash.pedrahosting.top" target="_blank" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-sm font-semibold transition">Open VPS Panel</a>
+                </div>
+                
+                <div class="bg-dark-800 border border-dark-700 rounded-2xl p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 rounded-2xl bg-blue-600/20 border border-blue-500/30 text-blue-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-server"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-base font-bold text-white">VPS #1 #867</h4>
+                            <p class="text-xs text-gray-400">Services: Root Server - Every month &bull; Expires: 28 Sep 2026</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold bg-red-500/10 text-red-400 border border-red-500/20">Cancelled</span>
+                        <a href="https://dash.pedrahosting.top" target="_blank" class="p-2 bg-dark-700 hover:bg-dark-600 text-white rounded-xl transition"><i class="fa-solid fa-chevron-right text-xs"></i></a>
                     </div>
                 </div>
             </div>
@@ -187,12 +234,12 @@
 
         <!-- Footer -->
         <footer class="border-t border-dark-700 bg-dark-800/30 py-4 px-6 text-center text-xs text-gray-500">
-            <p>&copy; 2026 Pedra Hosting. All rights reserved. Discord: <a href="https://discord.gg/Spbt6mxzFD" class="text-blue-400 hover:underline">discord.gg/Spbt6mxzFD</a></p>
+            <p>&copy; 2026 Pedra Hosting. All rights reserved. &bull; <a href="https://discord.gg/Spbt6mxzFD" target="_blank" class="text-blue-400 hover:underline">Discord Support</a></p>
         </footer>
 
     </main>
 
-    <!-- Simple JavaScript Tabs & Session -->
+    <!-- JavaScript Navigation Script -->
     <script>
         function switchTab(tabName) {
             document.getElementById('tab-dashboard').classList.add('hidden');
