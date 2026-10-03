@@ -16,26 +16,27 @@
             color: #ffffff;
             overflow-x: hidden;
         }
-        /* Navbar */
+        /* Navbar optimized for full 1920 screen */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 8%;
+            padding: 22px 5%;
             background-color: #0a0d14;
             border-bottom: 1px solid #1e293b;
+            width: 100%;
         }
         .logo {
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bold;
             color: #a855f7;
         }
         .nav-links {
             display: flex;
-            gap: 25px;
+            gap: 20px;
             list-style: none;
         }
         .nav-links button {
@@ -43,11 +44,12 @@
             border: none;
             text-decoration: none;
             color: #94a3b8;
-            font-size: 15px;
+            font-size: 16px;
             cursor: pointer;
             transition: 0.3s;
-            padding: 8px 16px;
+            padding: 10px 20px;
             border-radius: 8px;
+            font-weight: 500;
         }
         .nav-links button:hover, .nav-links button.active {
             color: #ffffff;
@@ -57,7 +59,8 @@
         /* Pages */
         .page {
             display: none;
-            padding: 60px 8%;
+            padding: 60px 5%;
+            min-height: calc(100vh - 160px);
         }
         .page.active {
             display: block;
@@ -66,38 +69,40 @@
         /* Hero Section (Home) */
         .hero {
             text-align: center;
-            padding: 60px 20px;
+            padding: 80px 20px;
             background: radial-gradient(circle at center, #171c2e 0%, #0a0d14 70%);
+            max-width: 1400px;
+            margin: 0 auto;
         }
         .hero h1 {
-            font-size: 48px;
+            font-size: 56px;
             font-weight: bold;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             background: linear-gradient(90deg, #c084fc, #3b82f6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .hero p {
             color: #94a3b8;
-            font-size: 18px;
-            margin-bottom: 30px;
+            font-size: 20px;
+            margin-bottom: 40px;
         }
         .btn-group {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 20px;
             margin-bottom: 60px;
         }
         .btn {
-            padding: 12px 28px;
-            border-radius: 8px;
+            padding: 14px 32px;
+            border-radius: 10px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 15px;
+            font-size: 16px;
             transition: 0.3s;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             cursor: pointer;
         }
         .btn-primary {
@@ -120,23 +125,23 @@
         .stats {
             display: flex;
             justify-content: center;
-            gap: 60px;
-            margin-top: 20px;
+            gap: 80px;
+            margin-top: 30px;
         }
         .stat-item h3 {
-            font-size: 28px;
+            font-size: 32px;
             color: #ffffff;
         }
         .stat-item span {
             color: #64748b;
-            font-size: 14px;
+            font-size: 15px;
         }
 
-        /* Pricing Grid */
+        /* Pricing Grid optimized for 1920x1080 screen width */
         .section-title {
             text-align: center;
-            font-size: 32px;
-            margin-bottom: 10px;
+            font-size: 38px;
+            margin-bottom: 12px;
             background: linear-gradient(90deg, #c084fc, #3b82f6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -144,20 +149,21 @@
         .section-subtitle {
             text-align: center;
             color: #94a3b8;
-            margin-bottom: 40px;
-            font-size: 16px;
+            margin-bottom: 50px;
+            font-size: 18px;
         }
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            align-items: stretch;
+            grid-template-columns: repeat(4, 1.fr); /* 4 columns exactly on large screens */
+            gap: 25px;
+            max-width: 1700px;
+            margin: 0 auto;
         }
         .price-card {
             background-color: #0e121d;
             border: 1px solid #1e293b;
-            border-radius: 16px;
-            padding: 30px 20px;
+            border-radius: 18px;
+            padding: 35px 25px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -174,47 +180,47 @@
         }
         .popular-badge {
             position: absolute;
-            top: -12px;
+            top: -14px;
             left: 50%;
             transform: translateX(-50%);
             background: linear-gradient(135deg, #8b5cf6, #3b82f6);
             color: #ffffff;
-            font-size: 12px;
+            font-size: 13px;
             font-weight: bold;
-            padding: 4px 14px;
+            padding: 5px 16px;
             border-radius: 20px;
         }
         .card-header {
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             border-bottom: 1px solid #1e293b;
-            padding-bottom: 20px;
+            padding-bottom: 22px;
         }
         .card-header h3 {
-            font-size: 22px;
+            font-size: 24px;
             color: #ffffff;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
         .price-tag {
-            font-size: 32px;
+            font-size: 36px;
             font-weight: bold;
             color: #3b82f6;
         }
         .price-tag span {
-            font-size: 14px;
+            font-size: 15px;
             color: #94a3b8;
             font-weight: normal;
         }
         .specs-list {
             list-style: none;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
         .specs-list li {
             display: flex;
             justify-content: space-between;
-            padding: 8px 0;
+            padding: 10px 0;
             border-bottom: 1px dashed #1e293b;
-            font-size: 14px;
+            font-size: 15px;
             color: #cbd5e1;
         }
         .specs-list li span:last-child {
@@ -223,32 +229,32 @@
         }
         .payment-box {
             background-color: #141c2e;
-            border-radius: 8px;
-            padding: 12px;
+            border-radius: 10px;
+            padding: 14px;
             margin-bottom: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 13px;
+            font-size: 14px;
         }
         .payment-box .usd-price {
-            font-size: 16px;
+            font-size: 18px;
             font-weight: bold;
             color: #3b82f6;
         }
         .payment-methods {
             text-align: right;
             color: #94a3b8;
-            font-size: 11px;
-            line-height: 1.5;
+            font-size: 12px;
+            line-height: 1.6;
         }
         .btn-order {
             width: 100%;
-            padding: 12px;
-            border-radius: 8px;
+            padding: 14px;
+            border-radius: 10px;
             border: none;
             font-weight: bold;
-            font-size: 15px;
+            font-size: 16px;
             cursor: pointer;
             transition: 0.3s;
             text-decoration: none;
@@ -271,10 +277,25 @@
         }
         footer {
             text-align: center;
-            padding: 30px;
+            padding: 35px;
             border-top: 1px solid #1e293b;
             color: #64748b;
-            font-size: 13px;
+            font-size: 14px;
+        }
+
+        /* Responsive for smaller screens */
+        @media(max-width: 1200px) {
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media(max-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                gap: 10px;
+            }
         }
     </style>
 </head>
@@ -663,20 +684,16 @@
         <p>Made by Atoms • PedraHosting © 2026</p>
     </footer>
 
-    <!-- JavaScript to handle page switching -->
+    <!-- JavaScript -->
     <script>
         function switchPage(pageId) {
-            // Hide all pages
             document.querySelectorAll('.page').forEach(page => {
                 page.classList.remove('active');
             });
-            // Remove active class from all buttons
             document.querySelectorAll('.nav-links button').forEach(btn => {
                 btn.classList.remove('active');
             });
-            // Show target page
             document.getElementById('page-' + pageId).classList.add('active');
-            // Add active class to clicked button
             document.getElementById('nav-' + pageId).classList.add('active');
         }
     </script>
