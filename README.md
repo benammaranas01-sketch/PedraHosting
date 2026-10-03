@@ -17,13 +17,13 @@
             overflow-x: hidden;
         }
 
-        /* Navbar avec effet Glassmorphism bleu Schtroumpf */
+        /* Navbar */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 6%;
-            background-color: rgba(4, 8, 20, 0.85);
+            background-color: rgba(4, 8, 20, 0.9);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(59, 130, 246, 0.2);
             width: 100%;
@@ -85,27 +85,32 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Hero Section (Home) avec le Sanfour */
+        /* Hero Section (Home) - Background Image Applied Here */
         .hero {
             text-align: center;
-            padding: 60px 20px;
-            background: radial-gradient(circle at center, #0f1d3a 0%, #040814 75%);
-            max-width: 1200px;
+            padding: 80px 20px;
+            /* وضع صورة السيرفرات كخلفية مع طبقة تغميق خفيفة لوضوح الكتابة */
+            background: linear-gradient(rgba(4, 8, 20, 0.75), rgba(4, 8, 20, 0.85)), url('pedra_background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            max-width: 1300px;
             margin: 0 auto;
             border-radius: 24px;
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(59, 130, 246, 0.4);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
         }
+        
         .sanfour-container {
             margin-bottom: 25px;
         }
         .sanfour-img {
-            width: 180px;
-            height: 180px;
+            width: 160px;
+            height: 160px;
             object-fit: cover;
             border-radius: 50%;
             border: 4px solid #60a5fa;
-            box-shadow: 0 0 30px rgba(96, 165, 250, 0.5);
+            box-shadow: 0 0 30px rgba(96, 165, 250, 0.6);
             animation: float 3s ease-in-out infinite;
         }
         @keyframes float {
@@ -119,6 +124,7 @@
             background: linear-gradient(90deg, #60a5fa, #ffffff, #60a5fa);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
         }
         .hero p {
             color: #93c5fd;
@@ -127,6 +133,7 @@
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+            font-weight: 500;
         }
         .btn-group {
             display: flex;
@@ -158,7 +165,7 @@
             box-shadow: 0 6px 25px rgba(59, 130, 246, 0.6);
         }
         .btn-secondary {
-            background-color: #0b1329;
+            background-color: rgba(11, 19, 41, 0.9);
             color: #fff;
             border: 1px solid #1e3a8a;
         }
@@ -379,11 +386,11 @@
         </ul>
     </nav>
 
-    <!-- PAGE 1: HOME -->
+    <!-- PAGE 1: HOME (Background image applied here) -->
     <div id="page-home" class="page active">
         <div class="hero">
             <div class="sanfour-container">
-                <img src="data:image/jpeg;base64,..." alt="Sanfour Boss" class="sanfour-img" id="sanfourAvatar">
+                <img src="pedra_background.jpg" alt="Sanfour Boss" class="sanfour-img">
             </div>
             <h1>PedraHosting <span style="color: #60a5fa;">Sanfour Edition</span></h1>
             <p>High-performance servers protected and managed by the ultimate Sanfour squad. Lightning-fast speed & 99.9% uptime.</p>
@@ -635,7 +642,7 @@
                     <li><span>RAM</span> <span>1.5 GB 🔋</span></li>
                     <li><span>SSD Storage</span> <span>3 GB 💽</span></li>
                     <li><span>Network</span> <span>1 GB/s 🛜</span></li>
-                    <li><span>Database</span> <span>x1 Database 🗄️️</span></li>
+                    <li><span>Database</span> <span>x1 Database 🗄</span></li>
                 </ul>
                 <div class="payment-box">
                     <span class="usd-price">$2</span>
@@ -741,7 +748,7 @@
                     <span class="usd-price">$1</span>
                     <div class="payment-methods">Binance<br>Ooredoo: <strong>DT 5.5</strong><br>D17: <strong>DT 4.2</strong></div>
                 </div>
-                <a href="https://pedrahosting.top/" target="_blank" class="btn-order btn-default">Order Now</a>
+                <a href="https://pedrahosting.top/" target="_blank" class="btn-order btn-default">Order Text</a>
             </div>
         </div>
     </div>
