@@ -16,7 +16,7 @@
             color: #ffffff;
             overflow-x: hidden;
         }
-        /* Navbar optimized for full 1920 screen */
+        /* Navbar */
         nav {
             display: flex;
             justify-content: space-between;
@@ -59,7 +59,7 @@
         /* Pages */
         .page {
             display: none;
-            padding: 60px 5%;
+            padding: 50px 5%;
             min-height: calc(100vh - 160px);
         }
         .page.active {
@@ -71,7 +71,7 @@
             text-align: center;
             padding: 80px 20px;
             background: radial-gradient(circle at center, #171c2e 0%, #0a0d14 70%);
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
         }
         .hero h1 {
@@ -137,7 +137,7 @@
             font-size: 15px;
         }
 
-        /* Pricing Grid optimized for 1920x1080 screen width */
+        /* Pricing Grid - Adjusted to match requested dimensions */
         .section-title {
             text-align: center;
             font-size: 38px;
@@ -149,21 +149,21 @@
         .section-subtitle {
             text-align: center;
             color: #94a3b8;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             font-size: 18px;
         }
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1.fr); /* 4 columns exactly on large screens */
-            gap: 25px;
-            max-width: 1700px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1350px; /* Reduit bech yji kima el capture */
             margin: 0 auto;
         }
         .price-card {
             background-color: #0e121d;
             border: 1px solid #1e293b;
-            border-radius: 18px;
-            padding: 35px 25px;
+            border-radius: 16px;
+            padding: 30px 20px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -189,38 +189,39 @@
             font-weight: bold;
             padding: 5px 16px;
             border-radius: 20px;
+            white-space: nowrap;
         }
         .card-header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             border-bottom: 1px solid #1e293b;
-            padding-bottom: 22px;
+            padding-bottom: 20px;
         }
         .card-header h3 {
-            font-size: 24px;
+            font-size: 22px;
             color: #ffffff;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
         .price-tag {
-            font-size: 36px;
+            font-size: 32px;
             font-weight: bold;
             color: #3b82f6;
         }
         .price-tag span {
-            font-size: 15px;
+            font-size: 14px;
             color: #94a3b8;
             font-weight: normal;
         }
         .specs-list {
             list-style: none;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
         .specs-list li {
             display: flex;
             justify-content: space-between;
-            padding: 10px 0;
+            padding: 9px 0;
             border-bottom: 1px dashed #1e293b;
-            font-size: 15px;
+            font-size: 14px;
             color: #cbd5e1;
         }
         .specs-list li span:last-child {
@@ -230,31 +231,31 @@
         .payment-box {
             background-color: #141c2e;
             border-radius: 10px;
-            padding: 14px;
+            padding: 12px;
             margin-bottom: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 14px;
+            font-size: 13px;
         }
         .payment-box .usd-price {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
             color: #3b82f6;
         }
         .payment-methods {
             text-align: right;
             color: #94a3b8;
-            font-size: 12px;
-            line-height: 1.6;
+            font-size: 11px;
+            line-height: 1.5;
         }
         .btn-order {
             width: 100%;
-            padding: 14px;
+            padding: 12px;
             border-radius: 10px;
             border: none;
             font-weight: bold;
-            font-size: 16px;
+            font-size: 15px;
             cursor: pointer;
             transition: 0.3s;
             text-decoration: none;
@@ -283,7 +284,7 @@
             font-size: 14px;
         }
 
-        /* Responsive for smaller screens */
+        /* Responsive */
         @media(max-width: 1200px) {
             .pricing-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -304,7 +305,7 @@
     <!-- Navbar -->
     <nav>
         <div class="logo">
-            <span>PedraHosting ☁️</span>
+            <span>PedraHosting ☁️️</span>
         </div>
         <ul class="nav-links">
             <li><button onclick="switchPage('home')" id="nav-home" class="active">Home</button></li>
@@ -647,7 +648,7 @@
                     <div class="price-tag">$2 <span>/ month</span></div>
                 </div>
                 <ul class="specs-list">
-                    <li><span>CPU</span> <span>2 Cores ⚙️</span></li>
+                    <li><span>CPU</span> <span>2 Cores ⚙️️</span></li>
                     <li><span>RAM</span> <span>2 GB 🔋</span></li>
                     <li><span>NVMe Storage</span> <span>25 GB 💽</span></li>
                     <li><span>Network</span> <span>1 GB/s 🛜</span></li>
