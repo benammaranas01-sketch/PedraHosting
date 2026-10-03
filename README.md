@@ -99,10 +99,10 @@
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
         }
         
-        .sanfour-container {
+        .Pedra-container {
             margin-bottom: 25px;
         }
-        .sanfour-img {
+        .Pedra-img {
             width: 160px;
             height: 160px;
             object-fit: cover;
@@ -215,11 +215,11 @@
     <!-- PAGE 1: HOME -->
     <div id="page-home" class="page active">
         <div class="hero">
-            <div class="sanfour-container">
-                <img src="pedra_background.jpg" alt="Sanfour Boss" class="sanfour-img">
+            <div class="Pedra-container">
+                <img src="pedra_background.jpg" alt="Pedra Boss" class="pedra-img">
             </div>
-            <h1>Pedra Hosting <span style="color: #60a5fa;">Sanfour Edition</span></h1>
-            <p>High-performance servers protected and managed by the ultimate Sanfour squad. Lightning-fast speed & 99.9% uptime.</p>
+            <h1>Pedra Hosting <span style="color: #60a5fa;">Pedra Edition</span></h1>
+            <p>High-performance servers protected and managed by the ultimate Pedra squad. Lightning-fast speed & 99.9% uptime.</p>
             
             <div class="btn-group">
                 <a href="#" class="btn btn-primary">Dashboard VPS →</a>
