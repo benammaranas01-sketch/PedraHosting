@@ -20,10 +20,10 @@
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-dark-900 text-gray-100 font-sans antialiased min-h-screen flex flex-col md:flex-row selection:bg-blue-600 selection:text-white">
+<body class="bg-dark-900 text-gray-100 font-sans antialiased min-h-screen flex selection:bg-blue-600 selection:text-white overflow-x-hidden">
 
-    <!-- LEFT SIDEBAR -->
-    <aside class="w-full md:w-64 bg-dark-800 border-r border-dark-700 flex flex-col justify-between p-4 select-none md:fixed h-auto md:h-screen z-20">
+    <!-- LEFT SIDEBAR (Fixed & Stable) -->
+    <aside class="w-64 bg-dark-800 border-r border-dark-700 flex flex-col justify-between p-4 select-none fixed top-0 left-0 h-screen z-20">
         <div>
             <div class="flex items-center space-x-3 px-2 mb-8 mt-2">
                 <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center shadow-lg shadow-blue-500/30">
@@ -51,24 +51,26 @@
             </div>
         </div>
 
-        <div class="bg-dark-900/60 border border-dark-700 rounded-2xl p-3 flex items-center justify-between mt-6 md:mt-0">
+        <div class="bg-dark-900/60 border border-dark-700 rounded-2xl p-3 flex items-center justify-between">
             <div class="flex items-center space-x-3 overflow-hidden">
-                <div class="w-9 h-9 rounded-full bg-blue-600 flex items-center justify-center font-bold text-white text-sm" id="user-initial">I</div>
+                <div class="w-9 h-9 rounded-full bg-blue-600 flex items-center justify-center font-bold text-white text-sm overflow-hidden" id="user-avatar-container">
+                    <span id="user-initial">I</span>
+                </div>
                 <div class="truncate">
                     <div class="text-sm font-semibold text-white truncate" id="user-name-display">Iskandar</div>
-                    <div class="text-xs text-blue-400 font-medium">Balance: €2,000 EUR</div>
+                    <div class="text-xs text-blue-400 font-medium" id="user-balance">Balance: €2,000 EUR</div>
                 </div>
             </div>
             <button onclick="discordLogin()" class="text-[#5865F2] hover:text-white transition p-1" title="Login with Discord"><i class="fa-brands fa-discord text-lg"></i></button>
         </div>
     </aside>
 
-    <!-- MAIN CONTENT AREA -->
-    <main class="flex-grow flex flex-col justify-between md:ml-64 min-h-screen w-full overflow-x-hidden">
+    <!-- MAIN CONTENT AREA (Pushed to the right to clear the fixed sidebar) -->
+    <main class="flex-grow flex flex-col justify-between ml-64 min-h-screen w-[calc(100%-16rem)]">
         
-        <header class="border-b border-dark-700 bg-dark-800/40 backdrop-blur px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div class="text-sm text-gray-400 font-medium text-center sm:text-left">
-                <i class="fa-regular fa-clock mr-1"></i> 05:12 PM &nbsp;|&nbsp; 
+        <header class="border-b border-dark-700 bg-dark-800/40 backdrop-blur px-6 py-4 flex items-center justify-between">
+            <div class="text-sm text-gray-400 font-medium">
+                <i class="fa-regular fa-clock mr-1"></i> 05:40 PM &nbsp;|&nbsp; 
                 <i class="fa-regular fa-calendar-days ml-2 mr-1"></i> Saturday, October 3, 2026[cite: 4] &nbsp;|&nbsp; 
                 <i class="fa-solid fa-crown ml-2 mr-1 text-amber-400"></i> Member for 1 month[cite: 4]
             </div>
@@ -77,14 +79,14 @@
             </a>
         </header>
 
-        <div class="p-6 md:p-10 max-w-7xl mx-auto w-full flex-grow space-y-8">
+        <div class="p-10 max-w-7xl mx-auto w-full flex-grow space-y-8">
 
             <!-- PAGE 1: DASHBOARD -->
             <div id="page-dashboard" class="page-section space-y-8">
                 <div class="bg-gradient-to-r from-dark-800 to-dark-700 border border-dark-600 rounded-3xl p-8 relative overflow-hidden shadow-xl">
                     <div class="relative z-10">
                         <div class="text-xs font-bold tracking-wider text-blue-400 uppercase mb-2">GOOD EVENING</div>
-                        <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-3" id="welcome-heading">Welcome back, Iskandar 👋[cite: 4]</h1>
+                        <h1 class="text-4xl font-extrabold text-white mb-3" id="welcome-heading">Welcome back, Iskandar 👋[cite: 4]</h1>
                         <p class="text-gray-400 text-sm max-w-xl">Everything about your services, invoices and support in one place.</p>
                         
                         <div class="mt-6 inline-flex items-center space-x-4 bg-dark-900/90 border border-dark-600 px-5 py-3 rounded-2xl">
@@ -99,7 +101,7 @@
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="grid grid-cols-4 gap-6">
                     <div class="bg-dark-800 border border-dark-700 rounded-2xl p-6">
                         <div class="text-3xl font-extrabold text-white mb-1" id="stat-active-services">0</div>
                         <div class="text-sm font-semibold text-gray-200">Active Services</div>
@@ -118,9 +120,9 @@
                     </div>
                 </div>
 
-                <div class="bg-dark-800 border border-dark-700 rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="bg-dark-800 border border-dark-700 rounded-2xl p-6 flex items-center justify-between">
                     <div class="flex items-center space-x-4">
-                        <div class="w-12 h-12 rounded-2xl bg-[#5865F2] flex items-center justify-center text-white text-2xl shadow-lg flex-shrink-0">
+                        <div class="w-12 h-12 rounded-2xl bg-[#5865F2] flex items-center justify-center text-white text-2xl shadow-lg">
                             <i class="fa-brands fa-discord"></i>
                         </div>
                         <div>
@@ -128,13 +130,13 @@
                             <p class="text-sm text-gray-400">Need instant help? Open a ticket on our official Discord server.</p>
                         </div>
                     </div>
-                    <a href="https://discord.gg/Spbt6mxzFD" target="_blank" class="px-6 py-3 bg-[#5865F2] hover:bg-[#4752C4] text-white font-medium rounded-xl text-sm transition whitespace-nowrap">Open Discord Ticket</a>
+                    <a href="https://discord.gg/Spbt6mxzFD" target="_blank" class="px-6 py-3 bg-[#5865F2] hover:bg-[#4752C4] text-white font-medium rounded-xl text-sm transition">Open Discord Ticket</a>
                 </div>
             </div>
 
             <!-- PAGE 2: SERVICES -->
             <div id="page-services" class="page-section space-y-6 hidden">
-                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                <div class="flex justify-between items-center">
                     <h2 class="text-2xl font-bold text-white">Your Services</h2>
                     <button onclick="switchPage('store')" class="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-sm font-semibold transition">+ Order New Server</button>
                 </div>
@@ -150,7 +152,7 @@
                 <h2 class="text-2xl font-bold text-white mb-2">Deploy New Game Server or Bot</h2>
                 <p class="text-gray-400 text-sm mb-6">Select your hosting infrastructure package below:</p>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="grid grid-cols-4 gap-6">
                     <div class="bg-dark-800 border border-dark-700 rounded-2xl p-6 flex flex-col justify-between hover:border-blue-500 transition">
                         <div>
                             <div class="text-blue-400 text-xs font-bold uppercase mb-1">Game Server</div>
@@ -230,7 +232,7 @@
         </div>
     </div>
 
-    <!-- JAVASCRIPT LOGIC -->
+    <!-- SCRIPTS -->
     <script>
         let selectedService = '';
         let userServices = JSON.parse(localStorage.getItem('pedra_services')) || [];
@@ -262,17 +264,16 @@
             const username = document.getElementById('order-username').value;
             const now = new Date().toLocaleDateString();
 
-            const newService = {
-                name: hostname,
-                type: selectedService,
-                time: now,
-                status: 'Running'
-            };
-
+            const newService = { name: hostname, type: selectedService, time: now, status: 'Running' };
             userServices.push(newService);
             localStorage.setItem('pedra_services', JSON.stringify(userServices));
 
-            sendDiscordLog(hostname, selectedService, username, email);
+            // Envoyer la requête au Backend pour poster le Log sur Discord
+            fetch('/api/deploy-log', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ serverName: hostname, type: selectedService, username, email })
+            }).catch(err => console.log('Log sent locally or pending backend connection.'));
 
             alert('Server successfully deployed and logs sent to Discord!');
             closeOrderModal();
@@ -289,7 +290,7 @@
             }
 
             container.innerHTML = userServices.map(s => `
-                <div class="bg-dark-800 border border-dark-700 rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div class="bg-dark-800 border border-dark-700 rounded-2xl p-6 flex items-center justify-between">
                     <div>
                         <h4 class="text-base font-bold text-white">${s.name}</h4>
                         <p class="text-xs text-gray-400">Type: ${s.type} &bull; Created: ${s.time}</p>
@@ -299,15 +300,26 @@
             `).join('');
         }
 
-        function sendDiscordLog(serverName, type, username, email) {
-            console.log(`[DISCORD LOG DISPATCHED] New Server Deployed: ${serverName} | Type: ${type} | User: ${username} (${email})`);
-        }
-
         function discordLogin() {
-            alert('Redirecting to Discord OAuth2 Authentication...');
+            window.location.href = '/auth/discord';
         }
 
-        window.onload = () => { renderServices(); };
+        // Charger les données utilisateur connectées si disponibles dans l'URL ou localStorage
+        window.onload = () => {
+            renderServices();
+            const urlParams = new URLSearchParams(window.location.search);
+            const username = urlParams.get('username');
+            const avatar = urlParams.get('avatar');
+            if (username) {
+                document.getElementById('user-name-display').innerText = username;
+                document.getElementById('badge-username').innerText = username;
+                document.getElementById('user-initial').innerText = username.charAt(0).toUpperCase();
+                document.getElementById('badge-initial').innerText = username.charAt(0).toUpperCase();
+                if(avatar) {
+                    document.getElementById('user-avatar-container').innerHTML = `<img src="${avatar}" class="w-full h-full object-cover">`;
+                }
+            }
+        };
     </script>
 </body>
 </html>
