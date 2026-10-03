@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PedraHosting - Professional Hosting</title>
+    <title>PedraHosting - Sanfour Edition</title>
     <style>
         * {
             margin: 0;
@@ -12,20 +12,20 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         body {
-            background-color: #07090e;
+            background-color: #040814;
             color: #f1f5f9;
             overflow-x: hidden;
         }
 
-        /* Navbar avec effet Glassmorphism */
+        /* Navbar avec effet Glassmorphism bleu Schtroumpf */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 6%;
-            background-color: rgba(7, 9, 14, 0.85);
+            background-color: rgba(4, 8, 20, 0.85);
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(139, 92, 246, 0.15);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
             width: 100%;
             position: sticky;
             top: 0;
@@ -37,10 +37,10 @@
             gap: 10px;
             font-size: 24px;
             font-weight: 800;
-            background: linear-gradient(135deg, #c084fc, #3b82f6);
+            background: linear-gradient(135deg, #60a5fa, #ffffff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 20px rgba(192, 132, 252, 0.3);
+            text-shadow: 0 0 20px rgba(96, 165, 250, 0.4);
         }
         .nav-links {
             display: flex;
@@ -50,7 +50,7 @@
         .nav-links button {
             background: transparent;
             border: 1px solid transparent;
-            color: #94a3b8;
+            color: #93c5fd;
             font-size: 15px;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -60,14 +60,14 @@
         }
         .nav-links button:hover {
             color: #ffffff;
-            background: rgba(139, 92, 246, 0.08);
-            border-color: rgba(139, 92, 246, 0.3);
+            background: rgba(59, 130, 246, 0.1);
+            border-color: rgba(59, 130, 246, 0.3);
         }
         .nav-links button.active {
             color: #ffffff;
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.25), rgba(59, 130, 246, 0.25));
-            border-color: #8b5cf6;
-            box-shadow: 0 0 15px rgba(139, 92, 246, 0.2);
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(37, 99, 235, 0.3));
+            border-color: #3b82f6;
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
         }
         
         /* Pages */
@@ -85,29 +85,45 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Hero Section (Home) */
+        /* Hero Section (Home) avec le Sanfour */
         .hero {
             text-align: center;
-            padding: 90px 20px;
-            background: radial-gradient(circle at center, #13182e 0%, #07090e 75%);
+            padding: 60px 20px;
+            background: radial-gradient(circle at center, #0f1d3a 0%, #040814 75%);
             max-width: 1200px;
             margin: 0 auto;
             border-radius: 24px;
-            border: 1px solid rgba(30, 41, 59, 0.6);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+        }
+        .sanfour-container {
+            margin-bottom: 25px;
+        }
+        .sanfour-img {
+            width: 180px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #60a5fa;
+            box-shadow: 0 0 30px rgba(96, 165, 250, 0.5);
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
         }
         .hero h1 {
-            font-size: 58px;
+            font-size: 52px;
             font-weight: 900;
-            margin-bottom: 20px;
-            background: linear-gradient(90deg, #c084fc, #60a5fa, #c084fc);
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #60a5fa, #ffffff, #60a5fa);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .hero p {
-            color: #94a3b8;
-            font-size: 19px;
-            margin-bottom: 40px;
+            color: #93c5fd;
+            font-size: 18px;
+            margin-bottom: 35px;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
@@ -116,7 +132,7 @@
             display: flex;
             justify-content: center;
             gap: 20px;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
         .btn {
             padding: 14px 32px;
@@ -131,41 +147,41 @@
             cursor: pointer;
         }
         .btn-primary {
-            background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
             color: #fff;
             border: none;
-            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
         }
         .btn-primary:hover {
             opacity: 0.95;
             transform: translateY(-3px);
-            box-shadow: 0 6px 25px rgba(139, 92, 246, 0.6);
+            box-shadow: 0 6px 25px rgba(59, 130, 246, 0.6);
         }
         .btn-secondary {
-            background-color: #111827;
+            background-color: #0b1329;
             color: #fff;
-            border: 1px solid #374151;
+            border: 1px solid #1e3a8a;
         }
         .btn-secondary:hover {
-            background-color: #1f2937;
-            border-color: #4b5563;
+            background-color: #1e293b;
+            border-color: #3b82f6;
         }
         .stats {
             display: flex;
             justify-content: center;
             gap: 70px;
-            margin-top: 40px;
+            margin-top: 30px;
             padding-top: 30px;
-            border-top: 1px solid rgba(30, 41, 59, 0.5);
+            border-top: 1px solid rgba(30, 58, 138, 0.5);
         }
         .stat-item h3 {
             font-size: 34px;
             font-weight: 800;
             color: #ffffff;
-            text-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+            text-shadow: 0 0 10px rgba(96, 165, 250, 0.4);
         }
         .stat-item span {
-            color: #64748b;
+            color: #93c5fd;
             font-size: 14px;
             font-weight: 500;
         }
@@ -176,13 +192,13 @@
             font-size: 38px;
             font-weight: 800;
             margin-bottom: 12px;
-            background: linear-gradient(90deg, #c084fc, #3b82f6);
+            background: linear-gradient(90deg, #60a5fa, #ffffff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .section-subtitle {
             text-align: center;
-            color: #94a3b8;
+            color: #93c5fd;
             margin-bottom: 45px;
             font-size: 17px;
         }
@@ -194,8 +210,8 @@
             margin: 0 auto;
         }
         .price-card {
-            background: linear-gradient(145deg, #0b0f19, #0d1322);
-            border: 1px solid rgba(30, 41, 59, 0.8);
+            background: linear-gradient(145deg, #070e1f, #0b1530);
+            border: 1px solid rgba(30, 58, 138, 0.8);
             border-radius: 18px;
             padding: 30px 20px;
             display: flex;
@@ -203,36 +219,36 @@
             justify-content: space-between;
             position: relative;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
         }
         .price-card:hover {
-            border-color: rgba(139, 92, 246, 0.6);
+            border-color: rgba(96, 165, 250, 0.8);
             transform: translateY(-6px);
-            box-shadow: 0 15px 40px rgba(139, 92, 246, 0.15);
+            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.2);
         }
         .price-card.popular {
-            background: linear-gradient(145deg, #0d1222, #13122b);
-            border: 2px solid #8b5cf6;
-            box-shadow: 0 10px 35px rgba(139, 92, 246, 0.25);
+            background: linear-gradient(145deg, #091330, #0f2252);
+            border: 2px solid #3b82f6;
+            box-shadow: 0 10px 35px rgba(59, 130, 246, 0.3);
         }
         .popular-badge {
             position: absolute;
             top: -14px;
             left: 50%;
             transform: translateX(-50%);
-            background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+            background: linear-gradient(135deg, #3b82f6, #60a5fa);
             color: #ffffff;
             font-size: 12px;
             font-weight: 700;
             padding: 5px 16px;
             border-radius: 20px;
             white-space: nowrap;
-            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
         }
         .card-header {
             text-align: center;
             margin-bottom: 25px;
-            border-bottom: 1px solid rgba(30, 41, 59, 0.8);
+            border-bottom: 1px solid rgba(30, 58, 138, 0.8);
             padding-bottom: 20px;
         }
         .card-header h3 {
@@ -248,7 +264,7 @@
         }
         .price-tag span {
             font-size: 14px;
-            color: #94a3b8;
+            color: #93c5fd;
             font-weight: normal;
         }
         .specs-list {
@@ -259,7 +275,7 @@
             display: flex;
             justify-content: space-between;
             padding: 10px 0;
-            border-bottom: 1px dashed rgba(30, 41, 59, 0.6);
+            border-bottom: 1px dashed rgba(30, 58, 138, 0.5);
             font-size: 14px;
             color: #cbd5e1;
         }
@@ -268,8 +284,8 @@
             color: #ffffff;
         }
         .payment-box {
-            background-color: rgba(15, 23, 42, 0.8);
-            border: 1px solid rgba(30, 41, 59, 0.8);
+            background-color: rgba(7, 14, 31, 0.8);
+            border: 1px solid rgba(30, 58, 138, 0.8);
             border-radius: 12px;
             padding: 12px;
             margin-bottom: 20px;
@@ -285,7 +301,7 @@
         }
         .payment-methods {
             text-align: right;
-            color: #94a3b8;
+            color: #93c5fd;
             font-size: 11px;
             line-height: 1.5;
         }
@@ -303,28 +319,28 @@
             text-align: center;
         }
         .btn-default {
-            background-color: #1e293b;
+            background-color: #1e3a8a;
             color: #ffffff;
         }
         .btn-default:hover {
-            background-color: #334155;
+            background-color: #2563eb;
         }
         .btn-highlight {
-            background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+            background: linear-gradient(135deg, #3b82f6, #60a5fa);
             color: #ffffff;
-            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
         }
         .btn-highlight:hover {
             opacity: 0.95;
-            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.5);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
         }
         footer {
             text-align: center;
             padding: 40px;
-            border-top: 1px solid rgba(30, 41, 59, 0.6);
-            color: #64748b;
+            border-top: 1px solid rgba(30, 58, 138, 0.6);
+            color: #93c5fd;
             font-size: 14px;
-            background-color: #05070a;
+            background-color: #020408;
         }
 
         /* Responsive */
@@ -352,7 +368,7 @@
     <!-- Navbar -->
     <nav>
         <div class="logo">
-            <span>PedraHosting ⚡</span>
+            <span>PedraHosting 🧢</span>
         </div>
         <ul class="nav-links">
             <li><button onclick="switchPage('home')" id="nav-home" class="active">Home</button></li>
@@ -366,8 +382,11 @@
     <!-- PAGE 1: HOME -->
     <div id="page-home" class="page active">
         <div class="hero">
-            <h1>PedraHosting</h1>
-            <p>Professional game servers & high-performance VPS hosting with lightning-fast speeds and advanced DDoS protection.</p>
+            <div class="sanfour-container">
+                <img src="data:image/jpeg;base64,..." alt="Sanfour Boss" class="sanfour-img" id="sanfourAvatar">
+            </div>
+            <h1>PedraHosting <span style="color: #60a5fa;">Sanfour Edition</span></h1>
+            <p>High-performance servers protected and managed by the ultimate Sanfour squad. Lightning-fast speed & 99.9% uptime.</p>
             
             <div class="btn-group">
                 <a href="https://pedrahosting.top/" target="_blank" class="btn btn-primary">Dashboard VPS →</a>
@@ -420,7 +439,7 @@
                 <div class="popular-badge">⭐ Most Popular</div>
                 <div class="card-header">
                     <h3>Plan 3</h3>
-                    <div class="price-tag" style="color: #c084fc;">$3 <span>/ month</span></div>
+                    <div class="price-tag" style="color: #60a5fa;">$3 <span>/ month</span></div>
                 </div>
                 <ul class="specs-list">
                     <li><span>Slots</span> <span>200 👥</span></li>
@@ -430,7 +449,7 @@
                     <li><span>Database</span> <span>x1 Database 🗄️</span></li>
                 </ul>
                 <div class="payment-box">
-                    <span class="usd-price" style="color: #c084fc;">$3</span>
+                    <span class="usd-price" style="color: #60a5fa;">$3</span>
                     <div class="payment-methods">Binance<br>Ooredoo: <strong>DT 16.5</strong><br>D17: <strong>DT 12.6</strong></div>
                 </div>
                 <a href="https://pedrahosting.top/" target="_blank" class="btn-order btn-highlight">Order Now</a>
@@ -465,7 +484,7 @@
                     <li><span>RAM</span> <span>1 GB 🔋</span></li>
                     <li><span>SSD Storage</span> <span>2 GB 💽</span></li>
                     <li><span>Network</span> <span>1 GB/s 🛜</span></li>
-                    <li><span>Database</span> <span>x1 Database 🗄️️</span></li>
+                    <li><span>Database</span> <span>x1 Database 🗄</span></li>
                 </ul>
                 <div class="payment-box">
                     <span class="usd-price">$1</span>
@@ -505,7 +524,7 @@
                 <div class="popular-badge">⭐ Most Popular</div>
                 <div class="card-header">
                     <h3>Plan 3</h3>
-                    <div class="price-tag" style="color: #c084fc;">$3 <span>/ month</span></div>
+                    <div class="price-tag" style="color: #60a5fa;">$3 <span>/ month</span></div>
                 </div>
                 <ul class="specs-list">
                     <li><span>Slots</span> <span>200 👥</span></li>
@@ -515,7 +534,7 @@
                     <li><span>Database</span> <span>x1 Database 🗄️</span></li>
                 </ul>
                 <div class="payment-box">
-                    <span class="usd-price" style="color: #c084fc;">$3</span>
+                    <span class="usd-price" style="color: #60a5fa;">$3</span>
                     <div class="payment-methods">Binance<br>Ooredoo: <strong>DT 16.5</strong><br>D17: <strong>DT 12.6</strong></div>
                 </div>
                 <a href="https://pedrahosting.top/" target="_blank" class="btn-order btn-highlight">Order Now</a>
@@ -550,7 +569,7 @@
                     <li><span>RAM</span> <span>1 GB 🔋</span></li>
                     <li><span>SSD Storage</span> <span>2 GB 💽</span></li>
                     <li><span>Network</span> <span>1 GB/s 🛜</span></li>
-                    <li><span>Database</span> <span>x1 Database 🗄️️</span></li>
+                    <li><span>Database</span> <span>x1 Database 🗄</span></li>
                 </ul>
                 <div class="payment-box">
                     <span class="usd-price">$1</span>
@@ -590,7 +609,7 @@
                 <div class="popular-badge">⭐ Most Popular</div>
                 <div class="card-header">
                     <h3>Plan 3</h3>
-                    <div class="price-tag" style="color: #c084fc;">$3 <span>/ month</span></div>
+                    <div class="price-tag" style="color: #60a5fa;">$3 <span>/ month</span></div>
                 </div>
                 <ul class="specs-list">
                     <li><span>Slots</span> <span>200 👥</span></li>
@@ -600,7 +619,7 @@
                     <li><span>Database</span> <span>x1 Database 🗄️</span></li>
                 </ul>
                 <div class="payment-box">
-                    <span class="usd-price" style="color: #c084fc;">$3</span>
+                    <span class="usd-price" style="color: #60a5fa;">$3</span>
                     <div class="payment-methods">Binance<br>Ooredoo: <strong>DT 16.5</strong><br>D17: <strong>DT 12.6</strong></div>
                 </div>
                 <a href="https://pedrahosting.top/" target="_blank" class="btn-order btn-highlight">Order Now</a>
@@ -616,7 +635,7 @@
                     <li><span>RAM</span> <span>1.5 GB 🔋</span></li>
                     <li><span>SSD Storage</span> <span>3 GB 💽</span></li>
                     <li><span>Network</span> <span>1 GB/s 🛜</span></li>
-                    <li><span>Database</span> <span>x1 Database 🗄️</span></li>
+                    <li><span>Database</span> <span>x1 Database 🗄️️</span></li>
                 </ul>
                 <div class="payment-box">
                     <span class="usd-price">$2</span>
@@ -674,7 +693,7 @@
                 <div class="popular-badge">⭐ Most Popular</div>
                 <div class="card-header">
                     <h3>Plan 3</h3>
-                    <div class="price-tag" style="color: #c084fc;">$3 <span>/ month</span></div>
+                    <div class="price-tag" style="color: #60a5fa;">$3 <span>/ month</span></div>
                 </div>
                 <ul class="specs-list">
                     <li><span>CPU</span> <span>3 Cores ⚙️</span></li>
@@ -683,7 +702,7 @@
                     <li><span>Network</span> <span>1 GB/s 🛜</span></li>
                 </ul>
                 <div class="payment-box">
-                    <span class="usd-price" style="color: #c084fc;">$3</span>
+                    <span class="usd-price" style="color: #60a5fa;">$3</span>
                     <div class="payment-methods">Binance<br>Ooredoo: <strong>DT 16.5</strong><br>D17: <strong>DT 12.6</strong></div>
                 </div>
                 <a href="https://pedrahosting.top/" target="_blank" class="btn-order btn-highlight">Order Now</a>
@@ -729,7 +748,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>Made by Atoms • PedraHosting © 2026</p>
+        <p>Powered by Sanfour Squad • PedraHosting © 2026</p>
     </footer>
 
     <!-- JavaScript -->
