@@ -12,80 +12,105 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         body {
-            background-color: #0a0d14;
-            color: #ffffff;
+            background-color: #07090e;
+            color: #f1f5f9;
             overflow-x: hidden;
         }
-        /* Navbar */
+
+        /* Navbar avec effet Glassmorphism */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 22px 5%;
-            background-color: #0a0d14;
-            border-bottom: 1px solid #1e293b;
+            padding: 20px 6%;
+            background-color: rgba(7, 9, 14, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(139, 92, 246, 0.15);
             width: 100%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         .logo {
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 22px;
-            font-weight: bold;
-            color: #a855f7;
+            font-size: 24px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #c084fc, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(192, 132, 252, 0.3);
         }
         .nav-links {
             display: flex;
-            gap: 20px;
+            gap: 12px;
             list-style: none;
         }
         .nav-links button {
-            background: none;
-            border: none;
-            text-decoration: none;
+            background: transparent;
+            border: 1px solid transparent;
             color: #94a3b8;
-            font-size: 16px;
+            font-size: 15px;
             cursor: pointer;
-            transition: 0.3s;
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 10px 22px;
+            border-radius: 10px;
+            font-weight: 600;
         }
-        .nav-links button:hover, .nav-links button.active {
+        .nav-links button:hover {
             color: #ffffff;
-            background-color: #1e1b4b;
+            background: rgba(139, 92, 246, 0.08);
+            border-color: rgba(139, 92, 246, 0.3);
+        }
+        .nav-links button.active {
+            color: #ffffff;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.25), rgba(59, 130, 246, 0.25));
+            border-color: #8b5cf6;
+            box-shadow: 0 0 15px rgba(139, 92, 246, 0.2);
         }
         
         /* Pages */
         .page {
             display: none;
             padding: 50px 5%;
-            min-height: calc(100vh - 160px);
+            min-height: calc(100vh - 150px);
+            animation: fadeIn 0.4s ease-in-out;
         }
         .page.active {
             display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Hero Section (Home) */
         .hero {
             text-align: center;
-            padding: 80px 20px;
-            background: radial-gradient(circle at center, #171c2e 0%, #0a0d14 70%);
+            padding: 90px 20px;
+            background: radial-gradient(circle at center, #13182e 0%, #07090e 75%);
             max-width: 1200px;
             margin: 0 auto;
+            border-radius: 24px;
+            border: 1px solid rgba(30, 41, 59, 0.6);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
         }
         .hero h1 {
-            font-size: 56px;
-            font-weight: bold;
+            font-size: 58px;
+            font-weight: 900;
             margin-bottom: 20px;
-            background: linear-gradient(90deg, #c084fc, #3b82f6);
+            background: linear-gradient(90deg, #c084fc, #60a5fa, #c084fc);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .hero p {
             color: #94a3b8;
-            font-size: 20px;
+            font-size: 19px;
             margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .btn-group {
             display: flex;
@@ -95,11 +120,11 @@
         }
         .btn {
             padding: 14px 32px;
-            border-radius: 10px;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: bold;
             font-size: 16px;
-            transition: 0.3s;
+            transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
             gap: 10px;
@@ -109,38 +134,47 @@
             background: linear-gradient(135deg, #8b5cf6, #3b82f6);
             color: #fff;
             border: none;
+            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
         }
         .btn-primary:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
+            opacity: 0.95;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(139, 92, 246, 0.6);
         }
         .btn-secondary {
-            background-color: #1e293b;
+            background-color: #111827;
             color: #fff;
-            border: 1px solid #334155;
+            border: 1px solid #374151;
         }
         .btn-secondary:hover {
-            background-color: #334155;
+            background-color: #1f2937;
+            border-color: #4b5563;
         }
         .stats {
             display: flex;
             justify-content: center;
-            gap: 80px;
-            margin-top: 30px;
+            gap: 70px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(30, 41, 59, 0.5);
         }
         .stat-item h3 {
-            font-size: 32px;
+            font-size: 34px;
+            font-weight: 800;
             color: #ffffff;
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
         }
         .stat-item span {
             color: #64748b;
-            font-size: 15px;
+            font-size: 14px;
+            font-weight: 500;
         }
 
-        /* Pricing Grid - Adjusted to match requested dimensions */
+        /* Pricing Grid */
         .section-title {
             text-align: center;
             font-size: 38px;
+            font-weight: 800;
             margin-bottom: 12px;
             background: linear-gradient(90deg, #c084fc, #3b82f6);
             -webkit-background-clip: text;
@@ -149,34 +183,37 @@
         .section-subtitle {
             text-align: center;
             color: #94a3b8;
-            margin-bottom: 40px;
-            font-size: 18px;
+            margin-bottom: 45px;
+            font-size: 17px;
         }
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            max-width: 1350px; /* Reduit bech yji kima el capture */
+            gap: 22px;
+            max-width: 1350px;
             margin: 0 auto;
         }
         .price-card {
-            background-color: #0e121d;
-            border: 1px solid #1e293b;
-            border-radius: 16px;
+            background: linear-gradient(145deg, #0b0f19, #0d1322);
+            border: 1px solid rgba(30, 41, 59, 0.8);
+            border-radius: 18px;
             padding: 30px 20px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             position: relative;
-            transition: 0.3s;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
         .price-card:hover {
-            border-color: #8b5cf6;
-            transform: translateY(-5px);
+            border-color: rgba(139, 92, 246, 0.6);
+            transform: translateY(-6px);
+            box-shadow: 0 15px 40px rgba(139, 92, 246, 0.15);
         }
         .price-card.popular {
-            background: linear-gradient(180deg, rgba(139, 92, 246, 0.08) 0%, #0e121d 40%);
+            background: linear-gradient(145deg, #0d1222, #13122b);
             border: 2px solid #8b5cf6;
+            box-shadow: 0 10px 35px rgba(139, 92, 246, 0.25);
         }
         .popular-badge {
             position: absolute;
@@ -185,27 +222,29 @@
             transform: translateX(-50%);
             background: linear-gradient(135deg, #8b5cf6, #3b82f6);
             color: #ffffff;
-            font-size: 13px;
-            font-weight: bold;
+            font-size: 12px;
+            font-weight: 700;
             padding: 5px 16px;
             border-radius: 20px;
             white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
         }
         .card-header {
             text-align: center;
             margin-bottom: 25px;
-            border-bottom: 1px solid #1e293b;
+            border-bottom: 1px solid rgba(30, 41, 59, 0.8);
             padding-bottom: 20px;
         }
         .card-header h3 {
             font-size: 22px;
             color: #ffffff;
             margin-bottom: 10px;
+            font-weight: 700;
         }
         .price-tag {
             font-size: 32px;
-            font-weight: bold;
-            color: #3b82f6;
+            font-weight: 800;
+            color: #60a5fa;
         }
         .price-tag span {
             font-size: 14px;
@@ -219,18 +258,19 @@
         .specs-list li {
             display: flex;
             justify-content: space-between;
-            padding: 9px 0;
-            border-bottom: 1px dashed #1e293b;
+            padding: 10px 0;
+            border-bottom: 1px dashed rgba(30, 41, 59, 0.6);
             font-size: 14px;
             color: #cbd5e1;
         }
         .specs-list li span:last-child {
-            font-weight: bold;
+            font-weight: 700;
             color: #ffffff;
         }
         .payment-box {
-            background-color: #141c2e;
-            border-radius: 10px;
+            background-color: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(30, 41, 59, 0.8);
+            border-radius: 12px;
             padding: 12px;
             margin-bottom: 20px;
             display: flex;
@@ -240,8 +280,8 @@
         }
         .payment-box .usd-price {
             font-size: 16px;
-            font-weight: bold;
-            color: #3b82f6;
+            font-weight: 800;
+            color: #60a5fa;
         }
         .payment-methods {
             text-align: right;
@@ -252,12 +292,12 @@
         .btn-order {
             width: 100%;
             padding: 12px;
-            border-radius: 10px;
+            border-radius: 12px;
             border: none;
-            font-weight: bold;
+            font-weight: 700;
             font-size: 15px;
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
             text-align: center;
@@ -272,16 +312,19 @@
         .btn-highlight {
             background: linear-gradient(135deg, #8b5cf6, #3b82f6);
             color: #ffffff;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
         }
         .btn-highlight:hover {
-            opacity: 0.9;
+            opacity: 0.95;
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.5);
         }
         footer {
             text-align: center;
-            padding: 35px;
-            border-top: 1px solid #1e293b;
+            padding: 40px;
+            border-top: 1px solid rgba(30, 41, 59, 0.6);
             color: #64748b;
             font-size: 14px;
+            background-color: #05070a;
         }
 
         /* Responsive */
@@ -295,7 +338,11 @@
                 grid-template-columns: 1fr;
             }
             .nav-links {
-                gap: 10px;
+                gap: 6px;
+            }
+            .nav-links button {
+                padding: 8px 12px;
+                font-size: 13px;
             }
         }
     </style>
@@ -305,7 +352,7 @@
     <!-- Navbar -->
     <nav>
         <div class="logo">
-            <span>PedraHosting ☁️️</span>
+            <span>PedraHosting ⚡</span>
         </div>
         <ul class="nav-links">
             <li><button onclick="switchPage('home')" id="nav-home" class="active">Home</button></li>
@@ -320,7 +367,7 @@
     <div id="page-home" class="page active">
         <div class="hero">
             <h1>PedraHosting</h1>
-            <p>Professional game servers & VPS hosting with high performance and advanced protection.</p>
+            <p>Professional game servers & high-performance VPS hosting with lightning-fast speeds and advanced DDoS protection.</p>
             
             <div class="btn-group">
                 <a href="https://pedrahosting.top/" target="_blank" class="btn btn-primary">Dashboard VPS →</a>
@@ -418,7 +465,7 @@
                     <li><span>RAM</span> <span>1 GB 🔋</span></li>
                     <li><span>SSD Storage</span> <span>2 GB 💽</span></li>
                     <li><span>Network</span> <span>1 GB/s 🛜</span></li>
-                    <li><span>Database</span> <span>x1 Database 🗄️</span></li>
+                    <li><span>Database</span> <span>x1 Database 🗄️️</span></li>
                 </ul>
                 <div class="payment-box">
                     <span class="usd-price">$1</span>
@@ -503,7 +550,7 @@
                     <li><span>RAM</span> <span>1 GB 🔋</span></li>
                     <li><span>SSD Storage</span> <span>2 GB 💽</span></li>
                     <li><span>Network</span> <span>1 GB/s 🛜</span></li>
-                    <li><span>Database</span> <span>x1 Database 🗄️</span></li>
+                    <li><span>Database</span> <span>x1 Database 🗄️️</span></li>
                 </ul>
                 <div class="payment-box">
                     <span class="usd-price">$1</span>
@@ -648,7 +695,7 @@
                     <div class="price-tag">$2 <span>/ month</span></div>
                 </div>
                 <ul class="specs-list">
-                    <li><span>CPU</span> <span>2 Cores ⚙️️</span></li>
+                    <li><span>CPU</span> <span>2 Cores ⚙️</span></li>
                     <li><span>RAM</span> <span>2 GB 🔋</span></li>
                     <li><span>NVMe Storage</span> <span>25 GB 💽</span></li>
                     <li><span>Network</span> <span>1 GB/s 🛜</span></li>
