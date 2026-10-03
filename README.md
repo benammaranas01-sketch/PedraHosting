@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PedraHosting - استضافة احترافية</title>
+    <title>خطط الأسعار - PedraHosting</title>
     <style>
         * {
             margin: 0;
@@ -14,248 +14,266 @@
         body {
             background-color: #0a0d14;
             color: #ffffff;
-            overflow-x: hidden;
+            padding: 40px 20px;
         }
-        /* Navbar */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 8%;
-            background-color: #0a0d14;
-            border-bottom: 1px solid #1e293b;
-        }
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 20px;
-            font-weight: bold;
-            color: #a855f7;
-        }
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            list-style: none;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: #94a3b8;
-            font-size: 15px;
-            transition: 0.3s;
-        }
-        .nav-links a:hover, .nav-links a.active {
-            color: #ffffff;
-            background-color: #1e1b4b;
-            padding: 8px 16px;
-            border-radius: 8px;
-        }
-        /* Hero Section */
-        .hero {
+        .pricing-section {
+            max-width: 1200px;
+            margin: 0 auto;
             text-align: center;
-            padding: 80px 20px;
-            background: radial-gradient(circle at center, #171c2e 0%, #0a0d14 70%);
         }
-        .hero h1 {
-            font-size: 48px;
-            font-weight: bold;
-            margin-bottom: 15px;
+        .pricing-section h2 {
+            font-size: 36px;
+            margin-bottom: 10px;
             background: linear-gradient(90deg, #c084fc, #3b82f6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .hero p {
-            color: #94a3b8;
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
-        .btn-group {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 60px;
-        }
-        .btn {
-            padding: 12px 28px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 15px;
-            transition: 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .btn-primary {
-            background: linear-gradient(135deg, #8b5cf6, #3b82f6);
-            color: #fff;
-        }
-        .btn-primary:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
-        }
-        .btn-secondary {
-            background-color: #1e293b;
-            color: #fff;
-            border: 1px solid #334155;
-        }
-        .btn-secondary:hover {
-            background-color: #334155;
-        }
-        /* Stats */
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 60px;
-            margin-top: 20px;
-        }
-        .stat-item {
-            text-align: center;
-        }
-        .stat-item h3 {
-            font-size: 28px;
-            color: #ffffff;
-        }
-        .stat-item span {
-            color: #64748b;
-            font-size: 14px;
-        }
-        /* Services Section */
-        .services {
-            padding: 60px 8%;
-            text-align: center;
-        }
-        .services h2 {
-            font-size: 32px;
-            margin-bottom: 10px;
-        }
-        .services p {
+        .pricing-section > p {
             color: #94a3b8;
             margin-bottom: 40px;
+            font-size: 16px;
         }
-        .cards-grid {
+        /* Grid */
+        .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
-            text-align: right;
+            align-items: stretch;
         }
-        .card {
+        /* Card Style */
+        .price-card {
             background-color: #0e121d;
             border: 1px solid #1e293b;
-            border-radius: 12px;
-            padding: 30px;
+            border-radius: 16px;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
             transition: 0.3s;
+            text-align: right;
         }
-        .card:hover {
+        .price-card:hover {
             border-color: #8b5cf6;
             transform: translateY(-5px);
         }
-        .card h3 {
-            font-size: 20px;
+        /* Popular Card Highlight */
+        .price-card.popular {
+            background: linear-gradient(180deg, rgba(139, 92, 246, 0.08) 0%, #0e121d 40%);
+            border: 2px solid #8b5cf6;
+        }
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 4px 14px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(139, 92, 246, 0.3);
+        }
+        /* Plan Header */
+        .card-header {
+            text-align: center;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #1e293b;
+            padding-bottom: 20px;
+        }
+        .card-header h3 {
+            font-size: 22px;
+            color: #ffffff;
             margin-bottom: 10px;
+        }
+        .price-tag {
+            font-size: 32px;
+            font-weight: bold;
+            color: #3b82f6;
+        }
+        .price-tag span {
+            font-size: 14px;
+            color: #94a3b8;
+            font-weight: normal;
+        }
+        /* Specs List */
+        .specs-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        .specs-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px dashed #1e293b;
+            font-size: 14px;
+            color: #cbd5e1;
+        }
+        .specs-list li span:last-child {
+            font-weight: bold;
             color: #ffffff;
         }
-        .card p {
-            color: #94a3b8;
-            font-size: 14px;
+        /* Payment Box */
+        .payment-box {
+            background-color: #141c2e;
+            border-radius: 8px;
+            padding: 12px;
             margin-bottom: 20px;
-        }
-        .card a {
-            color: #3b82f6;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-        }
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 30px;
-            border-top: 1px solid #1e293b;
-            color: #64748b;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             font-size: 13px;
+        }
+        .payment-box .usd-price {
+            font-size: 16px;
+            font-weight: bold;
+            color: #3b82f6;
+        }
+        .payment-methods {
+            text-align: left;
+            color: #94a3b8;
+            font-size: 11px;
+            line-height: 1.5;
+        }
+        /* Button */
+        .btn-order {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+        .btn-default {
+            background-color: #1e293b;
+            color: #ffffff;
+        }
+        .btn-default:hover {
+            background-color: #334155;
+        }
+        .btn-highlight {
+            background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4);
+        }
+        .btn-highlight:hover {
+            opacity: 0.9;
         }
     </style>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav>
-        <div class="logo">
-            <span>PedraHosting ☁️</span>
+    <div class="pricing-section">
+        <h2>خطط الأسعار والإمكانيات</h2>
+        <p>اختر الخطة المناسبة لسيرفرك أو مشروعك الرقمي بأفضل الأسعار في السوق</p>
+
+        <div class="pricing-grid">
+
+            <!-- Plan 4 -->
+            <div class="price-card">
+                <div class="card-header">
+                    <h3>Plan 4</h3>
+                    <div class="price-tag">$4 <span>/ شهرياً</span></div>
+                </div>
+                <ul class="specs-list">
+                    <li><span>Slots</span> <span>500 👥</span></li>
+                    <li><span>RAM</span> <span>2.5 GB 🔋</span></li>
+                    <li><span>SSD Storage</span> <span>4 GB 💽</span></li>
+                    <li><span>Network Speed</span> <span>11 GB/s 🛜</span></li>
+                    <li><span>Database</span> <span>x1 Database 🗄️</span></li>
+                </ul>
+                <div class="payment-box">
+                    <span class="usd-price">$4</span>
+                    <div class="payment-methods">
+                        Binance<br>
+                        Ooredoo: <strong>DT 22</strong><br>
+                        D17: <strong>DT 16.8</strong>
+                    </div>
+                </div>
+                <a href="https://pedrahosting.top/" target="_blank" class="btn-order btn-default">اطلب الآن</a>
+            </div>
+
+            <!-- Plan 3 (Most Popular) -->
+            <div class="price-card popular">
+                <div class="popular-badge">⭐ الأكثر طلباً</div>
+                <div class="card-header">
+                    <h3>Plan 3</h3>
+                    <div class="price-tag" style="color: #c084fc;">$3 <span>/ شهرياً</span></div>
+                </div>
+                <ul class="specs-list">
+                    <li><span>Slots</span> <span>200 👥</span></li>
+                    <li><span>RAM</span> <span>2 GB 🔋</span></li>
+                    <li><span>SSD Storage</span> <span>3.5 GB 💽</span></li>
+                    <li><span>Network Speed</span> <span>1 GB/s 🛜</span></li>
+                    <li><span>Database</span> <span>x1 Database 🗄️</span></li>
+                </ul>
+                <div class="payment-box">
+                    <span class="usd-price" style="color: #c084fc;">$3</span>
+                    <div class="payment-methods">
+                        Binance<br>
+                        Ooredoo: <strong>DT 16.5</strong><br>
+                        D17: <strong>DT 12.6</strong>
+                    </div>
+                </div>
+                <a href="https://pedrahosting.top/" target="_blank" class="btn-order btn-highlight">اطلب الآن</a>
+            </div>
+
+            <!-- Plan 2 -->
+            <div class="price-card">
+                <div class="card-header">
+                    <h3>Plan 2</h3>
+                    <div class="price-tag">$2 <span>/ شهرياً</span></div>
+                </div>
+                <ul class="specs-list">
+                    <li><span>Slots</span> <span>100 👥</span></li>
+                    <li><span>RAM</span> <span>1.5 GB 🔋</span></li>
+                    <li><span>SSD Storage</span> <span>3 GB 💽</span></li>
+                    <li><span>Network Speed</span> <span>1 GB/s 🛜</span></li>
+                    <li><span>Database</span> <span>x1 Database 🗄️</span></li>
+                </ul>
+                <div class="payment-box">
+                    <span class="usd-price">$2</span>
+                    <div class="payment-methods">
+                        Binance<br>
+                        Ooredoo: <strong>DT 11</strong><br>
+                        D17: <strong>DT 8.4</strong>
+                    </div>
+                </div>
+                <a href="https://pedrahosting.top/" target="_blank" class="btn-order btn-default">اطلب الآن</a>
+            </div>
+
+            <!-- Plan 1 -->
+            <div class="price-card">
+                <div class="card-header">
+                    <h3>Plan 1</h3>
+                    <div class="price-tag">$1 <span>/ شهرياً</span></div>
+                </div>
+                <ul class="specs-list">
+                    <li><span>Slots</span> <span>50 👥</span></li>
+                    <li><span>RAM</span> <span>1 GB 🔋</span></li>
+                    <li><span>SSD Storage</span> <span>2 GB 💽</span></li>
+                    <li><span>Network Speed</span> <span>1 GB/s 🛜</span></li>
+                    <li><span>Database</span> <span>x1 Database 🗄️</span></li>
+                </ul>
+                <div class="payment-box">
+                    <span class="usd-price">$1</span>
+                    <div class="payment-methods">
+                        Binance<br>
+                        Ooredoo: <strong>DT 5.5</strong><br>
+                        D17: <strong>DT 4.2</strong>
+                    </div>
+                </div>
+                <a href="https://pedrahosting.top/" target="_blank" class="btn-order btn-default">اطلب الآن</a>
+            </div>
+
         </div>
-        <ul class="nav-links">
-            <li><a href="#" class="active">الرئيسية</a></li>
-            <li><a href="https://pedrahosting.top/" target="_blank">Host SAMP</a></li>
-            <li><a href="https://pedrahosting.top/" target="_blank">Host MTA</a></li>
-            <li><a href="https://pedrahosting.top/" target="_blank">Host Bot</a></li>
-            <li><a href="https://pedrahosting.top/" target="_blank">VPS</a></li>
-        </ul>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>PedraHosting</h1>
-        <p>استضافة احترافية بأسعار لا تُقاوم. نوفر لك أفضل خدمات الاستضافة لسيرفرات الألعاب، البوتات، VPS و RDP بأداء عالي وحماية متقدمة.</p>
-        
-        <div class="btn-group">
-            <a href="https://pedrahosting.top/" target="_blank" class="btn btn-primary">استكشف الخدمات ←</a>
-            <a href="https://discord.gg/Spbt6mxzFD" target="_blank" class="btn btn-secondary">💬 Join Discord</a>
-        </div>
-
-        <div class="stats">
-            <div class="stat-item">
-                <h3>24/7</h3>
-                <span>دعم فني</span>
-            </div>
-            <div class="stat-item">
-                <h3>+500</h3>
-                <span>عميل سعيد</span>
-            </div>
-            <div class="stat-item">
-                <h3>99.9%</h3>
-                <span>Uptime</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services">
-        <h2>كل ما تحتاجه في مكان واحد</h2>
-        <p>نقدم مجموعة متكاملة من خدمات الاستضافة لتلبية جميع احتياجاتك</p>
-
-        <div class="cards-grid">
-            <div class="card">
-                <h3>Host Bot</h3>
-                <p>استضافة بوتات Discord و Telegram بدون انقطاع وبأداء مستقر.</p>
-                <a href="https://pedrahosting.top/" target="_blank">عرض الخطط ←</a>
-            </div>
-            <div class="card">
-                <h3>Host MTA</h3>
-                <p>استضافة سيرفرات MTA بسرعة فائقة واستقرار تام لجميع المودات.</p>
-                <a href="https://pedrahosting.top/" target="_blank">عرض الخطط ←</a>
-            </div>
-            <div class="card">
-                <h3>Host SA-MP</h3>
-                <p>استضافة سيرفرات SA-MP بأداء عالي وحماية DDoS متقدمة.</p>
-                <a href="https://pedrahosting.top/" target="_blank">عرض الخطط ←</a>
-            </div>
-            <div class="card">
-                <h3>RDP Servers</h3>
-                <p>سيرفرات RDP للوصول عن بعد بأداء ممتاز وسرعة نقل عالية.</p>
-                <a href="https://pedrahosting.top/" target="_blank">عرض الخطط ←</a>
-            </div>
-            <div class="card">
-                <h3>VPS Servers</h3>
-                <p>سيرفرات VPS بمعالجات قوية وتخزين NvMe سريع جداً لمشاريعك.</p>
-                <a href="https://pedrahosting.top/" target="_blank">عرض الخطط ←</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>Made by Atoms • PedraHosting © 2026</p>
-    </footer>
+    </div>
 
 </body>
 </html>
