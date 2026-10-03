@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>R4X Hosting - Sanfour Edition</title>
+    <title>Pedra Hosting</title>
     <style>
         * {
             margin: 0;
@@ -205,7 +205,7 @@
     <!-- Navbar -->
     <nav>
         <div class="logo">
-            <span>R4X Hosting 🧢</span>
+            <span> Pedra Hosting 🧢</span>
         </div>
         <ul class="nav-links">
             <li><button onclick="switchPage('home')" id="nav-home" class="active">Home</button></li>
@@ -218,7 +218,7 @@
             <div class="sanfour-container">
                 <img src="pedra_background.jpg" alt="Sanfour Boss" class="sanfour-img">
             </div>
-            <h1>R4X Hosting <span style="color: #60a5fa;">Sanfour Edition</span></h1>
+            <h1>Pedra Hosting <span style="color: #60a5fa;">Sanfour Edition</span></h1>
             <p>High-performance servers protected and managed by the ultimate Sanfour squad. Lightning-fast speed & 99.9% uptime.</p>
             
             <div class="btn-group">
@@ -244,7 +244,7 @@
     </div>
 
     <footer>
-        <p>Powered by Sanfour Squad • R4X Hosting © 2026</p>
+        <p>Powered by Pedra Squad • Pedra Hosting © 2026</p>
     </footer>
 
     <script>
