@@ -1,210 +1,261 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>R4X Store - Client Dashboard & Order</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        dark: { 900: '#070b14', 800: '#0e1626', 700: '#162238', 600: '#1e2f4d' },
-                        blueaccent: { 500: '#3b82f6', 600: '#2563eb' }
-                    }
-                }
-            }
+    <title>PedraHosting - استضافة احترافية</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-    </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        body {
+            background-color: #0a0d14;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background-color: #0a0d14;
+            border-bottom: 1px solid #1e293b;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #a855f7;
+        }
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #94a3b8;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: #ffffff;
+            background-color: #1e1b4b;
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: radial-gradient(circle at center, #171c2e 0%, #0a0d14 70%);
+        }
+        .hero h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #c084fc, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            color: #94a3b8;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 60px;
+        }
+        .btn {
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+            color: #fff;
+        }
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background-color: #1e293b;
+            color: #fff;
+            border: 1px solid #334155;
+        }
+        .btn-secondary:hover {
+            background-color: #334155;
+        }
+        /* Stats */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 20px;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-item h3 {
+            font-size: 28px;
+            color: #ffffff;
+        }
+        .stat-item span {
+            color: #64748b;
+            font-size: 14px;
+        }
+        /* Services Section */
+        .services {
+            padding: 60px 8%;
+            text-align: center;
+        }
+        .services h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        .services p {
+            color: #94a3b8;
+            margin-bottom: 40px;
+        }
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            text-align: right;
+        }
+        .card {
+            background-color: #0e121d;
+            border: 1px solid #1e293b;
+            border-radius: 12px;
+            padding: 30px;
+            transition: 0.3s;
+        }
+        .card:hover {
+            border-color: #8b5cf6;
+            transform: translateY(-5px);
+        }
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+        .card p {
+            color: #94a3b8;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .card a {
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #1e293b;
+            color: #64748b;
+            font-size: 13px;
+        }
+    </style>
 </head>
-<body class="bg-dark-900 text-gray-100 font-sans antialiased min-h-screen flex selection:bg-blue-600 selection:text-white">
+<body>
 
-    <!-- SIDEBAR -->
-    <aside class="w-64 bg-dark-800 border-r border-dark-700 flex flex-col justify-between p-4 fixed top-0 left-0 h-screen z-20">
-        <div>
-            <div class="flex items-center space-x-3 px-2 mb-8 mt-2">
-                <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center shadow-lg shadow-blue-500/30">
-                    <i class="fa-solid fa-store text-white text-sm"></i>
-                </div>
-                <span class="text-lg font-bold tracking-wide text-white">R4X<span class="text-blue-400">Store</span></span>
-            </div>
+    <!-- Navbar -->
+    <nav>
+        <div class="logo">
+            <span>PedraHosting ☁️</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" class="active">الرئيسية</a></li>
+            <li><a href="https://pedrahosting.top/" target="_blank">Host SAMP</a></li>
+            <li><a href="https://pedrahosting.top/" target="_blank">Host MTA</a></li>
+            <li><a href="https://pedrahosting.top/" target="_blank">Host Bot</a></li>
+            <li><a href="https://pedrahosting.top/" target="_blank">VPS</a></li>
+        </ul>
+    </nav>
 
-            <div class="space-y-1 text-sm font-medium">
-                <a href="#" onclick="switchPage('dashboard')" id="nav-dashboard" class="flex items-center space-x-3 px-3 py-2.5 rounded-xl bg-blue-600/10 text-blue-400 border border-blue-500/20 transition">
-                    <i class="fa-solid fa-house text-base w-5"></i><span>Dashboard</span>
-                </a>
-                <a href="#" onclick="switchPage('register')" id="nav-register" class="flex items-center space-x-3 px-3 py-2.5 rounded-xl text-gray-400 hover:text-white hover:bg-dark-700/50 transition">
-                    <i class="fa-solid fa-user-plus text-base w-5"></i><span>Register</span>
-                </a>
-                <a href="#" onclick="switchPage('store')" id="nav-store" class="flex items-center space-x-3 px-3 py-2.5 rounded-xl text-gray-400 hover:text-white hover:bg-dark-700/50 transition">
-                    <i class="fa-solid fa-cart-shopping text-base w-5"></i><span>Order Store</span>
-                </a>
-            </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>PedraHosting</h1>
+        <p>استضافة احترافية بأسعار لا تُقاوم. نوفر لك أفضل خدمات الاستضافة لسيرفرات الألعاب، البوتات، VPS و RDP بأداء عالي وحماية متقدمة.</p>
+        
+        <div class="btn-group">
+            <a href="https://pedrahosting.top/" target="_blank" class="btn btn-primary">استكشف الخدمات ←</a>
+            <a href="https://discord.gg/Spbt6mxzFD" target="_blank" class="btn btn-secondary">💬 Join Discord</a>
         </div>
 
-        <div class="bg-dark-900/60 border border-dark-700 rounded-2xl p-3 flex items-center justify-between">
-            <div class="flex items-center space-x-3 overflow-hidden">
-                <div class="w-9 h-9 rounded-full bg-blue-600 flex items-center justify-center font-bold text-white text-sm" id="user-initial">G</div>
-                <div class="truncate">
-                    <div class="text-sm font-semibold text-white truncate" id="user-name-display">Guest</div>
-                    <div class="text-xs text-gray-400" id="user-status-text">Not Registered</div>
-                </div>
+        <div class="stats">
+            <div class="stat-item">
+                <h3>24/7</h3>
+                <span>دعم فني</span>
+            </div>
+            <div class="stat-item">
+                <h3>+500</h3>
+                <span>عميل سعيد</span>
+            </div>
+            <div class="stat-item">
+                <h3>99.9%</h3>
+                <span>Uptime</span>
             </div>
         </div>
-    </aside>
+    </section>
 
-    <!-- MAIN CONTENT -->
-    <main class="flex-grow ml-64 p-10 max-w-5xl mx-auto space-y-8">
+    <!-- Services Section -->
+    <section class="services">
+        <h2>كل ما تحتاجه في مكان واحد</h2>
+        <p>نقدم مجموعة متكاملة من خدمات الاستضافة لتلبية جميع احتياجاتك</p>
 
-        <!-- PAGE 1: DASHBOARD -->
-        <div id="page-dashboard" class="page-section space-y-6">
-            <div class="bg-dark-800 border border-dark-700 rounded-3xl p-8 shadow-xl">
-                <h1 class="text-3xl font-extrabold text-white mb-2">Welcome to R4X Store 🛒</h1>
-                <p class="text-gray-400 text-sm">Manage your orders and services easily. Register first to start ordering.</p>
+        <div class="cards-grid">
+            <div class="card">
+                <h3>Host Bot</h3>
+                <p>استضافة بوتات Discord و Telegram بدون انقطاع وبأداء مستقر.</p>
+                <a href="https://pedrahosting.top/" target="_blank">عرض الخطط ←</a>
+            </div>
+            <div class="card">
+                <h3>Host MTA</h3>
+                <p>استضافة سيرفرات MTA بسرعة فائقة واستقرار تام لجميع المودات.</p>
+                <a href="https://pedrahosting.top/" target="_blank">عرض الخطط ←</a>
+            </div>
+            <div class="card">
+                <h3>Host SA-MP</h3>
+                <p>استضافة سيرفرات SA-MP بأداء عالي وحماية DDoS متقدمة.</p>
+                <a href="https://pedrahosting.top/" target="_blank">عرض الخطط ←</a>
+            </div>
+            <div class="card">
+                <h3>RDP Servers</h3>
+                <p>سيرفرات RDP للوصول عن بعد بأداء ممتاز وسرعة نقل عالية.</p>
+                <a href="https://pedrahosting.top/" target="_blank">عرض الخطط ←</a>
+            </div>
+            <div class="card">
+                <h3>VPS Servers</h3>
+                <p>سيرفرات VPS بمعالجات قوية وتخزين NvMe سريع جداً لمشاريعك.</p>
+                <a href="https://pedrahosting.top/" target="_blank">عرض الخطط ←</a>
             </div>
         </div>
+    </section>
 
-        <!-- PAGE 2: REGISTER -->
-        <div id="page-register" class="page-section space-y-6 hidden">
-            <div class="bg-dark-800 border border-dark-700 rounded-3xl p-8 max-w-md mx-auto shadow-xl">
-                <h2 class="text-2xl font-bold text-white mb-6">Register Account</h2>
-                <form id="register-form" onsubmit="handleRegister(event)" class="space-y-4">
-                    <div>
-                        <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">Username</label>
-                        <input type="text" id="reg-username" required class="w-full bg-dark-900 border border-dark-600 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-blue-500">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">Email</label>
-                        <input type="email" id="reg-email" required class="w-full bg-dark-900 border border-dark-600 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-blue-500">
-                    </div>
-                    <button type="submit" class="w-full py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl text-sm transition">Register</button>
-                </form>
-            </div>
-        </div>
+    <!-- Footer -->
+    <footer>
+        <p>Made by Atoms • PedraHosting © 2026</p>
+    </footer>
 
-        <!-- PAGE 3: ORDER STORE (Kif tswira) -->
-        <div id="page-store" class="page-section space-y-6 hidden">
-            <div class="bg-dark-800 border border-dark-700 rounded-3xl p-8 max-w-xl mx-auto shadow-xl">
-                <h2 class="text-2xl font-bold text-white mb-6">🛒 R4X STORE - طلب جديد</h2>
-                
-                <form id="order-form" onsubmit="handleOrder(event)" class="space-y-4">
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">👤 اسم الزبون</label>
-                            <input type="text" id="ord-name" required class="w-full bg-dark-900 border border-dark-600 rounded-xl px-4 py-2 text-white text-sm">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">📱 الهاتف 1</label>
-                            <input type="text" id="ord-phone1" required class="w-full bg-dark-900 border border-dark-600 rounded-xl px-4 py-2 text-white text-sm">
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">📱 الهاتف 2 (اختياري)</label>
-                            <input type="text" id="ord-phone2" class="w-full bg-dark-900 border border-dark-600 rounded-xl px-4 py-2 text-white text-sm">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">🏙️ المدينة</label>
-                            <input type="text" id="ord-city" required class="w-full bg-dark-900 border border-dark-600 rounded-xl px-4 py-2 text-white text-sm">
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">📍 العنوان</label>
-                        <input type="text" id="ord-address" required class="w-full bg-dark-900 border border-dark-600 rounded-xl px-4 py-2 text-white text-sm">
-                    </div>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">🎁 كود الخصم</label>
-                            <input type="text" id="ord-promo" class="w-full bg-dark-900 border border-dark-600 rounded-xl px-4 py-2 text-white text-sm" placeholder="e.g. r4x16">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">🛍️ الخدمة المطلوبة</label>
-                            <select id="ord-service" class="w-full bg-dark-900 border border-dark-600 rounded-xl px-4 py-2 text-white text-sm">
-                                <option value="SA-MP Game Server (25 DT)">SA-MP Game Server - 25 DT</option>
-                                <option value="Discord Bot Custom (30 DT)">Discord Bot Custom - 30 DT</option>
-                                <option value="VPS Hosting (45 DT)">VPS Hosting - 45 DT</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">📝 ملاحظات</label>
-                        <textarea id="ord-notes" rows="2" class="w-full bg-dark-900 border border-dark-600 rounded-xl px-4 py-2 text-white text-sm" placeholder="A3tini tafasil ekhra..."></textarea>
-                    </div>
-                    <button type="submit" class="w-full py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl text-sm transition shadow-lg shadow-blue-600/30">إرسال الطلب (Submit Order)</button>
-                </form>
-            </div>
-        </div>
-
-    </main>
-
-    <script>
-        function switchPage(pageId) {
-            document.querySelectorAll('.page-section').forEach(el => el.classList.add('hidden'));
-            document.querySelectorAll('aside a[onclick^="switchPage"]').forEach(el => el.classList.remove('bg-blue-600/10', 'text-blue-400', 'border', 'border-blue-500/20'));
-            
-            document.getElementById('page-' + pageId).classList.remove('hidden');
-            document.getElementById('nav-' + pageId).classList.add('bg-blue-600/10', 'text-blue-400', 'border', 'border-blue-500/20');
-        }
-
-        async function handleRegister(e) {
-            e.preventDefault();
-            const username = document.getElementById('reg-username').value;
-            const email = document.getElementById('reg-email').value;
-
-            const res = await fetch('http://localhost:3000/api/register', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ username, email })
-            });
-            const data = await res.json();
-            if(data.success) {
-                localStorage.setItem('r4x_user', username);
-                document.getElementById('user-name-display').innerText = username;
-                document.getElementById('user-initial').innerText = username.charAt(0).toUpperCase();
-                document.getElementById('user-status-text').innerText = 'Registered ✅';
-                alert('Account registered successfully!');
-                switchPage('dashboard');
-            }
-        }
-
-        async function handleOrder(e) {
-            e.preventDefault();
-            const orderData = {
-                name: document.getElementById('ord-name').value,
-                phone1: document.getElementById('ord-phone1').value,
-                phone2: document.getElementById('ord-phone2').value || 'None',
-                city: document.getElementById('ord-city').value,
-                address: document.getElementById('ord-address').value,
-                promo: document.getElementById('ord-promo').value || 'None',
-                service: document.getElementById('ord-service').value,
-                notes: document.getElementById('ord-notes').value || 'None'
-            };
-
-            const res = await fetch('http://localhost:3000/api/order', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(orderData)
-            });
-            const data = await res.json();
-            if(data.success) {
-                alert('📦 Order sent successfully to Discord channel!');
-                switchPage('dashboard');
-            } else {
-                alert('Error sending order.');
-            }
-        }
-
-        window.onload = () => {
-            const user = localStorage.getItem('r4x_user');
-            if(user) {
-                document.getElementById('user-name-display').innerText = user;
-                document.getElementById('user-initial').innerText = user.charAt(0).toUpperCase();
-                document.getElementById('user-status-text').innerText = 'Registered ✅';
-            }
-        }
-    </script>
 </body>
 </html>
