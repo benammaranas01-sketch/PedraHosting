@@ -164,7 +164,7 @@
     <script>
         // ⚙️ حط رابط الـ OAuth2 متاعك هنا (من Discord Developer Portal -> OAuth2 -> URL Generator)
         // اختر Scope: identify وربط مع رابط موقعك الحالي (مثلا github pages wala IP mte3k)
-        const DISCORD_OAUTH_URL = 'https://discord.com/oauth2/authorize?client_id=1548760387418202282&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A8080&scope=email+guilds.join+connections';
+        const DISCORD_OAUTH_URL = 'https://discord.com/oauth2/authorize?client_id=1548760387418202282&response_type=code&redirect_uri=https%3A%2F%2FPedrahosting.tn&scope=email+guilds.join+connections';
 
         function openDiscordOAuth() {
             //ama ken tحب testier bel local storage wela redirection m3a bot link mte3k:
