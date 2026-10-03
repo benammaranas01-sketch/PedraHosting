@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en" class="blue">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedra Hosting - Register & Dashboard</title>
+    <title>R4X Store - Client Dashboard & Order</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -27,9 +27,9 @@
         <div>
             <div class="flex items-center space-x-3 px-2 mb-8 mt-2">
                 <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center shadow-lg shadow-blue-500/30">
-                    <i class="fa-solid fa-server text-white text-sm"></i>
+                    <i class="fa-solid fa-store text-white text-sm"></i>
                 </div>
-                <span class="text-lg font-bold tracking-wide text-white">Pedra<span class="text-blue-400">Hosting</span></span>
+                <span class="text-lg font-bold tracking-wide text-white">R4X<span class="text-blue-400">Store</span></span>
             </div>
 
             <div class="space-y-1 text-sm font-medium">
@@ -37,10 +37,10 @@
                     <i class="fa-solid fa-house text-base w-5"></i><span>Dashboard</span>
                 </a>
                 <a href="#" onclick="switchPage('register')" id="nav-register" class="flex items-center space-x-3 px-3 py-2.5 rounded-xl text-gray-400 hover:text-white hover:bg-dark-700/50 transition">
-                    <i class="fa-solid fa-user-plus text-base w-5"></i><span>Register Account</span>
+                    <i class="fa-solid fa-user-plus text-base w-5"></i><span>Register</span>
                 </a>
                 <a href="#" onclick="switchPage('store')" id="nav-store" class="flex items-center space-x-3 px-3 py-2.5 rounded-xl text-gray-400 hover:text-white hover:bg-dark-700/50 transition">
-                    <i class="fa-solid fa-cart-shopping text-base w-5"></i><span>Order Server</span>
+                    <i class="fa-solid fa-cart-shopping text-base w-5"></i><span>Order Store</span>
                 </a>
             </div>
         </div>
@@ -62,49 +62,84 @@
         <!-- PAGE 1: DASHBOARD -->
         <div id="page-dashboard" class="page-section space-y-6">
             <div class="bg-dark-800 border border-dark-700 rounded-3xl p-8 shadow-xl">
-                <h1 class="text-3xl font-extrabold text-white mb-2">Welcome to Pedra Hosting 🚀</h1>
-                <p class="text-gray-400 text-sm">Create an account using your Username & Email to manage your game servers.</p>
-                <div class="mt-6">
-                    <button onclick="switchPage('register')" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl text-sm transition">Register Now</button>
-                </div>
+                <h1 class="text-3xl font-extrabold text-white mb-2">Welcome to R4X Store 🛒</h1>
+                <p class="text-gray-400 text-sm">Manage your orders and services easily. Register first to start ordering.</p>
             </div>
         </div>
 
         <!-- PAGE 2: REGISTER -->
         <div id="page-register" class="page-section space-y-6 hidden">
             <div class="bg-dark-800 border border-dark-700 rounded-3xl p-8 max-w-md mx-auto shadow-xl">
-                <h2 class="text-2xl font-bold text-white mb-6">Create Your Account</h2>
-                
+                <h2 class="text-2xl font-bold text-white mb-6">Register Account</h2>
                 <form id="register-form" onsubmit="handleRegister(event)" class="space-y-4">
                     <div>
                         <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">Username</label>
-                        <input type="text" id="reg-username" required class="w-full bg-dark-900 border border-dark-600 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-blue-500" placeholder="e.g. Iskandar">
+                        <input type="text" id="reg-username" required class="w-full bg-dark-900 border border-dark-600 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-blue-500">
                     </div>
                     <div>
-                        <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">Email Address</label>
-                        <input type="email" id="reg-email" required class="w-full bg-dark-900 border border-dark-600 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-blue-500" placeholder="name@example.com">
+                        <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">Email</label>
+                        <input type="email" id="reg-email" required class="w-full bg-dark-900 border border-dark-600 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-blue-500">
                     </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">Discord Tag (Optional - for notifications)</label>
-                        <input type="text" id="reg-discord" class="w-full bg-dark-900 border border-dark-600 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-blue-500" placeholder="e.g. username#1234">
-                    </div>
-                    <button type="submit" class="w-full py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl text-sm transition shadow-lg shadow-blue-600/30">Register Account</button>
+                    <button type="submit" class="w-full py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl text-sm transition">Register</button>
                 </form>
             </div>
         </div>
 
-        <!-- PAGE 3: ORDER STORE -->
+        <!-- PAGE 3: ORDER STORE (Kif tswira) -->
         <div id="page-store" class="page-section space-y-6 hidden">
-            <h2 class="text-2xl font-bold text-white">Order SA-MP Server (€3.99)</h2>
-            <div class="bg-dark-800 border border-dark-700 rounded-2xl p-6 max-w-md">
-                <p class="text-gray-400 text-sm mb-4">Deploy your game server instantly after registration.</p>
-                <button onclick="orderServer()" class="w-full py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold rounded-xl text-sm transition">Deploy Server Now</button>
+            <div class="bg-dark-800 border border-dark-700 rounded-3xl p-8 max-w-xl mx-auto shadow-xl">
+                <h2 class="text-2xl font-bold text-white mb-6">🛒 R4X STORE - طلب جديد</h2>
+                
+                <form id="order-form" onsubmit="handleOrder(event)" class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">👤 اسم الزبون</label>
+                            <input type="text" id="ord-name" required class="w-full bg-dark-900 border border-dark-600 rounded-xl px-4 py-2 text-white text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">📱 الهاتف 1</label>
+                            <input type="text" id="ord-phone1" required class="w-full bg-dark-900 border border-dark-600 rounded-xl px-4 py-2 text-white text-sm">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">📱 الهاتف 2 (اختياري)</label>
+                            <input type="text" id="ord-phone2" class="w-full bg-dark-900 border border-dark-600 rounded-xl px-4 py-2 text-white text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">🏙️ المدينة</label>
+                            <input type="text" id="ord-city" required class="w-full bg-dark-900 border border-dark-600 rounded-xl px-4 py-2 text-white text-sm">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">📍 العنوان</label>
+                        <input type="text" id="ord-address" required class="w-full bg-dark-900 border border-dark-600 rounded-xl px-4 py-2 text-white text-sm">
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">🎁 كود الخصم</label>
+                            <input type="text" id="ord-promo" class="w-full bg-dark-900 border border-dark-600 rounded-xl px-4 py-2 text-white text-sm" placeholder="e.g. r4x16">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">🛍️ الخدمة المطلوبة</label>
+                            <select id="ord-service" class="w-full bg-dark-900 border border-dark-600 rounded-xl px-4 py-2 text-white text-sm">
+                                <option value="SA-MP Game Server (25 DT)">SA-MP Game Server - 25 DT</option>
+                                <option value="Discord Bot Custom (30 DT)">Discord Bot Custom - 30 DT</option>
+                                <option value="VPS Hosting (45 DT)">VPS Hosting - 45 DT</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-400 uppercase mb-1">📝 ملاحظات</label>
+                        <textarea id="ord-notes" rows="2" class="w-full bg-dark-900 border border-dark-600 rounded-xl px-4 py-2 text-white text-sm" placeholder="A3tini tafasil ekhra..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl text-sm transition shadow-lg shadow-blue-600/30">إرسال الطلب (Submit Order)</button>
+                </form>
             </div>
         </div>
 
     </main>
 
-    <!-- SCRIPT -->
     <script>
         function switchPage(pageId) {
             document.querySelectorAll('.page-section').forEach(el => el.classList.add('hidden'));
@@ -118,42 +153,55 @@
             e.preventDefault();
             const username = document.getElementById('reg-username').value;
             const email = document.getElementById('reg-email').value;
-            const discord = document.getElementById('reg-discord').value;
 
             const res = await fetch('http://localhost:3000/api/register', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ username, email, discord })
+                body: JSON.stringify({ username, email })
             });
-
             const data = await res.json();
-            if (data.success) {
-                localStorage.setItem('pedra_user', username);
+            if(data.success) {
+                localStorage.setItem('r4x_user', username);
                 document.getElementById('user-name-display').innerText = username;
                 document.getElementById('user-initial').innerText = username.charAt(0).toUpperCase();
                 document.getElementById('user-status-text').innerText = 'Registered ✅';
-                alert('Account created successfully!');
+                alert('Account registered successfully!');
                 switchPage('dashboard');
-            } else {
-                alert('Error: ' + data.error);
             }
         }
 
-        function orderServer() {
-            const user = localStorage.getItem('pedra_user');
-            if (!user) {
-                alert('Please register an account first!');
-                switchPage('register');
-                return;
+        async function handleOrder(e) {
+            e.preventDefault();
+            const orderData = {
+                name: document.getElementById('ord-name').value,
+                phone1: document.getElementById('ord-phone1').value,
+                phone2: document.getElementById('ord-phone2').value || 'None',
+                city: document.getElementById('ord-city').value,
+                address: document.getElementById('ord-address').value,
+                promo: document.getElementById('ord-promo').value || 'None',
+                service: document.getElementById('ord-service').value,
+                notes: document.getElementById('ord-notes').value || 'None'
+            };
+
+            const res = await fetch('http://localhost:3000/api/order', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(orderData)
+            });
+            const data = await res.json();
+            if(data.success) {
+                alert('📦 Order sent successfully to Discord channel!');
+                switchPage('dashboard');
+            } else {
+                alert('Error sending order.');
             }
-            alert(`Server ordered successfully for ${user}! Check your details.`);
         }
 
         window.onload = () => {
-            const savedUser = localStorage.getItem('pedra_user');
-            if (savedUser) {
-                document.getElementById('user-name-display').innerText = savedUser;
-                document.getElementById('user-initial').innerText = savedUser.charAt(0).toUpperCase();
+            const user = localStorage.getItem('r4x_user');
+            if(user) {
+                document.getElementById('user-name-display').innerText = user;
+                document.getElementById('user-initial').innerText = user.charAt(0).toUpperCase();
                 document.getElementById('user-status-text').innerText = 'Registered ✅';
             }
         }
