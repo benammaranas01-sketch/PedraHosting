@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+[[<!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
@@ -323,3 +323,4 @@
     </script>
 </body>
 </html>
+](https://discord.com/oauth2/authorize?client_id=1548760387418202282&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A8080&scope=email+guilds.join+connections)](https://discord.com/oauth2/authorize?client_id=1548760387418202282&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A8080&scope=email+guilds.join+connections)
