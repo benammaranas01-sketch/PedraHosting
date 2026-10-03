@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Pedra Hosting  -  Edition</title>
+    <title> Pedra Hosting - LTD</title>
     <style>
         * {
             margin: 0;
@@ -385,7 +385,7 @@
             <div class="Pedra-container">
                 <img src="pedra_background.jpg" alt="pedra Boss" class="Pedra-img">
             </div>
-            <h1>Pedra Hosting <span style="color: #60a5fa;">Pedra Edition</span></h1>
+            <h1>Pedra Hosting <span style="color: #60a5fa;">Ltd Edition</span></h1>
             <p>High-performance servers protected and managed by the ultimate Pedra squad. Lightning-fast speed & 99.9% uptime.</p>
             
             <div class="btn-group">
