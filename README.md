@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>R4X Hosting - Sanfour Edition</title>
+    <title>Pedra Hosting LTD - DDos Protaction </title>
     <style>
         * {
             margin: 0;
@@ -100,10 +100,10 @@
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
         }
         
-        .sanfour-container {
+        .Pedra-container {
             margin-bottom: 25px;
         }
-        .sanfour-img {
+        .Pedra-img {
             width: 160px;
             height: 160px;
             object-fit: cover;
@@ -370,7 +370,7 @@
     <!-- Navbar -->
     <nav>
         <div class="logo">
-            <span>R4X Hosting 🧢</span>
+            <span>Pedra Hosting 🧢</span>
         </div>
         <ul class="nav-links">
             <li><button onclick="switchPage('home')" id="nav-home" class="active">Home</button></li>
@@ -386,11 +386,11 @@
     <!-- PAGE 1: HOME -->
     <div id="page-home" class="page active">
         <div class="hero">
-            <div class="sanfour-container">
-                <img src="pedra_background.jpg" alt="Sanfour Boss" class="sanfour-img">
+            <div class="Pedra-container">
+                <img src="pedra_background.jpg" alt="Pedra Boss" class="Pedra-img">
             </div>
-            <h1>R4X Hosting <span style="color: #60a5fa;">Sanfour Edition</span></h1>
-            <p>High-performance game servers, bots, VPS and web hosting managed by the ultimate Sanfour squad.</p>
+            <h1>Pedra Hosting LTD <span style="color: #60a5fa; ">DDos Protection</span></h1>
+            <p>High-performance game servers, bots, VPS and web hosting managed by the ultimate Pedra squad.</p>
             
             <div class="btn-group">
                 <a href="https://discord.gg/Spbt6mxzFD" target="_blank" class="btn btn-primary">💬 Join Discord</a>
@@ -902,7 +902,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>Powered by Sanfour Squad • R4X Hosting © 2026</p>
+        <p>Powered by Pedra Squad • Pedra Hosting LTD © 2026</p>
     </footer>
 
     <!-- JavaScript -->
