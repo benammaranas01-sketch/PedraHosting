@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Pedra Hosting - LTD</title>
+    <title>R4X Hosting - Sanfour Edition</title>
     <style>
         * {
             margin: 0;
@@ -22,7 +22,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 6%;
+            padding: 20px 5%;
             background-color: rgba(4, 8, 20, 0.9);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(59, 130, 246, 0.2);
@@ -44,7 +44,7 @@
         }
         .nav-links {
             display: flex;
-            gap: 10px;
+            gap: 8px;
             list-style: none;
             flex-wrap: wrap;
         }
@@ -52,10 +52,10 @@
             background: transparent;
             border: 1px solid transparent;
             color: #93c5fd;
-            font-size: 14px;
+            font-size: 13px;
             cursor: pointer;
             transition: all 0.3s ease;
-            padding: 8px 18px;
+            padding: 8px 14px;
             border-radius: 10px;
             font-weight: 600;
         }
@@ -73,7 +73,7 @@
         
         .page {
             display: none;
-            padding: 50px 5%;
+            padding: 50px 4%;
             min-height: calc(100vh - 150px);
             animation: fadeIn 0.4s ease-in-out;
         }
@@ -100,10 +100,10 @@
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
         }
         
-        .Pedra-container {
+        .sanfour-container {
             margin-bottom: 25px;
         }
-        .Pedra-img {
+        .sanfour-img {
             width: 160px;
             height: 160px;
             object-fit: cover;
@@ -211,7 +211,7 @@
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 22px;
+            gap: 20px;
             max-width: 1350px;
             margin: 0 auto;
         }
@@ -219,7 +219,7 @@
             background: linear-gradient(145deg, #070e1f, #0b1530);
             border: 1px solid rgba(30, 58, 138, 0.8);
             border-radius: 18px;
-            padding: 30px 20px;
+            padding: 25px 18px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -253,48 +253,50 @@
         }
         .card-header {
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             border-bottom: 1px solid rgba(30, 58, 138, 0.8);
-            padding-bottom: 20px;
+            padding-bottom: 15px;
         }
         .card-header h3 {
-            font-size: 22px;
+            font-size: 21px;
             color: #ffffff;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-weight: 700;
         }
         .price-tag {
-            font-size: 32px;
+            font-size: 30px;
             font-weight: 800;
             color: #60a5fa;
         }
         .price-tag span {
-            font-size: 14px;
+            font-size: 13px;
             color: #93c5fd;
             font-weight: normal;
         }
         .specs-list {
             list-style: none;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
         .specs-list li {
             display: flex;
             justify-content: space-between;
-            padding: 10px 0;
+            align-items: center;
+            padding: 9px 0;
             border-bottom: 1px dashed rgba(30, 58, 138, 0.5);
-            font-size: 14px;
+            font-size: 13.5px;
             color: #cbd5e1;
         }
         .specs-list li span:last-child {
             font-weight: 700;
             color: #ffffff;
+            text-align: right;
         }
         .payment-box {
             background-color: rgba(7, 14, 31, 0.8);
             border: 1px solid rgba(30, 58, 138, 0.8);
             border-radius: 12px;
-            padding: 12px;
-            margin-bottom: 20px;
+            padding: 10px 12px;
+            margin-bottom: 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -309,15 +311,15 @@
             text-align: right;
             color: #93c5fd;
             font-size: 11px;
-            line-height: 1.5;
+            line-height: 1.4;
         }
         .btn-order {
             width: 100%;
-            padding: 12px;
+            padding: 11px;
             border-radius: 12px;
             border: none;
             font-weight: 700;
-            font-size: 15px;
+            font-size: 14.5px;
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
@@ -368,25 +370,27 @@
     <!-- Navbar -->
     <nav>
         <div class="logo">
-            <span>Pedra Hosting 🧢</span>
+            <span>R4X Hosting 🧢</span>
         </div>
         <ul class="nav-links">
             <li><button onclick="switchPage('home')" id="nav-home" class="active">Home</button></li>
-            <li><button onclick="switchPage('samp')" id="nav-samp">Host SAMP</button></li>
-            <li><button onclick="switchPage('mta')" id="nav-mta">Host MTA</button></li>
-            <li><button onclick="switchPage('minecraft')" id="nav-minecraft">Host Minecraft</button></li>
-            <li><button onclick="switchPage('bot')" id="nav-bot">Host Bot</button></li>
+            <li><button onclick="switchPage('samp')" id="nav-samp">SAMP</button></li>
+            <li><button onclick="switchPage('mta')" id="nav-mta">MTA</button></li>
+            <li><button onclick="switchPage('minecraft')" id="nav-minecraft">Minecraft</button></li>
+            <li><button onclick="switchPage('bot')" id="nav-bot">Bot</button></li>
+            <li><button onclick="switchPage('vps')" id="nav-vps">VPS</button></li>
+            <li><button onclick="switchPage('web')" id="nav-web">Web</button></li>
         </ul>
     </nav>
 
     <!-- PAGE 1: HOME -->
     <div id="page-home" class="page active">
         <div class="hero">
-            <div class="Pedra-container">
-                <img src="pedra_background.jpg" alt="pedra Boss" class="Pedra-img">
+            <div class="sanfour-container">
+                <img src="pedra_background.jpg" alt="Sanfour Boss" class="sanfour-img">
             </div>
-            <h1>Pedra Hosting <span style="color: #60a5fa;">Ltd</span></h1>
-            <p>High-performance servers protected and managed by the ultimate Pedra squad. Lightning-fast speed & 99.9% uptime.</p>
+            <h1>R4X Hosting <span style="color: #60a5fa;">Sanfour Edition</span></h1>
+            <p>High-performance game servers, bots, VPS and web hosting managed by the ultimate Sanfour squad.</p>
             
             <div class="btn-group">
                 <a href="https://discord.gg/Spbt6mxzFD" target="_blank" class="btn btn-primary">💬 Join Discord</a>
@@ -419,7 +423,7 @@
             <div class="price-card">
                 <div class="card-header">
                     <h3>Plan 1</h3>
-                    <div class="price-tag">$1 <span>/ month</span></div>
+                    <div class="price-tag">$1 <span>/ mo</span></div>
                 </div>
                 <ul class="specs-list">
                     <li><span>Slots</span> <span>50 👥</span></li>
@@ -437,7 +441,7 @@
             <div class="price-card">
                 <div class="card-header">
                     <h3>Plan 2</h3>
-                    <div class="price-tag">$2 <span>/ month</span></div>
+                    <div class="price-tag">$2 <span>/ mo</span></div>
                 </div>
                 <ul class="specs-list">
                     <li><span>Slots</span> <span>100 👥</span></li>
@@ -456,7 +460,7 @@
                 <div class="popular-badge">⭐ Most Popular</div>
                 <div class="card-header">
                     <h3>Plan 3</h3>
-                    <div class="price-tag" style="color: #60a5fa;">$3 <span>/ month</span></div>
+                    <div class="price-tag" style="color: #60a5fa;">$3 <span>/ mo</span></div>
                 </div>
                 <ul class="specs-list">
                     <li><span>Slots</span> <span>200 👥</span></li>
@@ -474,13 +478,13 @@
             <div class="price-card">
                 <div class="card-header">
                     <h3>Plan 4</h3>
-                    <div class="price-tag">$4 <span>/ month</span></div>
+                    <div class="price-tag">$4 <span>/ mo</span></div>
                 </div>
                 <ul class="specs-list">
                     <li><span>Slots</span> <span>500 👥</span></li>
                     <li><span>RAM</span> <span>2.5 GB 🔋</span></li>
                     <li><span>SSD Storage</span> <span>4 GB 💽</span></li>
-                    <li><span>Network</span> <span>11 GB/s 🛜</span></li>
+                    <li><span>Network</span> <span>1 GB/s 🛜</span></li>
                 </ul>
                 <div class="payment-box">
                     <span class="usd-price">$4</span>
@@ -500,7 +504,7 @@
             <div class="price-card">
                 <div class="card-header">
                     <h3>Plan 1</h3>
-                    <div class="price-tag">$1 <span>/ month</span></div>
+                    <div class="price-tag">$1 <span>/ mo</span></div>
                 </div>
                 <ul class="specs-list">
                     <li><span>Slots</span> <span>50 👥</span></li>
@@ -518,7 +522,7 @@
             <div class="price-card">
                 <div class="card-header">
                     <h3>Plan 2</h3>
-                    <div class="price-tag">$2 <span>/ month</span></div>
+                    <div class="price-tag">$2 <span>/ mo</span></div>
                 </div>
                 <ul class="specs-list">
                     <li><span>Slots</span> <span>100 👥</span></li>
@@ -537,7 +541,7 @@
                 <div class="popular-badge">⭐ Most Popular</div>
                 <div class="card-header">
                     <h3>Plan 3</h3>
-                    <div class="price-tag" style="color: #60a5fa;">$3 <span>/ month</span></div>
+                    <div class="price-tag" style="color: #60a5fa;">$3 <span>/ mo</span></div>
                 </div>
                 <ul class="specs-list">
                     <li><span>Slots</span> <span>200 👥</span></li>
@@ -555,13 +559,13 @@
             <div class="price-card">
                 <div class="card-header">
                     <h3>Plan 4</h3>
-                    <div class="price-tag">$4 <span>/ month</span></div>
+                    <div class="price-tag">$4 <span>/ mo</span></div>
                 </div>
                 <ul class="specs-list">
                     <li><span>Slots</span> <span>500 👥</span></li>
                     <li><span>RAM</span> <span>2.5 GB 🔋</span></li>
                     <li><span>SSD Storage</span> <span>4 GB 💽</span></li>
-                    <li><span>Network</span> <span>11 GB/s 🛜</span></li>
+                    <li><span>Network</span> <span>1 GB/s 🛜</span></li>
                 </ul>
                 <div class="payment-box">
                     <span class="usd-price">$4</span>
@@ -581,13 +585,13 @@
             <div class="price-card">
                 <div class="card-header">
                     <h3>MC Plan 1</h3>
-                    <div class="price-tag">$1.5 <span>/ month</span></div>
+                    <div class="price-tag">$1.5 <span>/ mo</span></div>
                 </div>
                 <ul class="specs-list">
                     <li><span>RAM</span> <span>2 GB 🔋</span></li>
                     <li><span>Storage</span> <span>10 GB SSD 💽</span></li>
                     <li><span>Players</span> <span>Up to 20 👥</span></li>
-                    <li><span>Support</span> <span>Spigot / Paper ⛏️</span></li>
+                    <li><span>Support</span> <span>Paper / Spigot ⛏️️</span></li>
                 </ul>
                 <div class="payment-box">
                     <span class="usd-price">$1.5</span>
@@ -600,7 +604,7 @@
                 <div class="popular-badge">⭐ Most Popular</div>
                 <div class="card-header">
                     <h3>MC Plan 2</h3>
-                    <div class="price-tag" style="color: #60a5fa;">$3 <span>/ month</span></div>
+                    <div class="price-tag" style="color: #60a5fa;">$3 <span>/ mo</span></div>
                 </div>
                 <ul class="specs-list">
                     <li><span>RAM</span> <span>4 GB 🔋</span></li>
@@ -618,13 +622,13 @@
             <div class="price-card">
                 <div class="card-header">
                     <h3>MC Plan 3</h3>
-                    <div class="price-tag">$5 <span>/ month</span></div>
+                    <div class="price-tag">$5 <span>/ mo</span></div>
                 </div>
                 <ul class="specs-list">
                     <li><span>RAM</span> <span>6 GB 🔋</span></li>
                     <li><span>Storage</span> <span>40 GB SSD 💽</span></li>
                     <li><span>Players</span> <span>Unlimited 👥</span></li>
-                    <li><span>Support</span> <span>High Performance 🚀</span></li>
+                    <li><span>Support</span> <span>High Power 🚀</span></li>
                 </ul>
                 <div class="payment-box">
                     <span class="usd-price">$5</span>
@@ -636,7 +640,7 @@
             <div class="price-card">
                 <div class="card-header">
                     <h3>MC Plan 4</h3>
-                    <div class="price-tag">$8 <span>/ month</span></div>
+                    <div class="price-tag">$8 <span>/ mo</span></div>
                 </div>
                 <ul class="specs-list">
                     <li><span>RAM</span> <span>8 GB 🔋</span></li>
@@ -662,13 +666,13 @@
             <div class="price-card">
                 <div class="card-header">
                     <h3>Bot Lite</h3>
-                    <div class="price-tag">$1 <span>/ month</span></div>
+                    <div class="price-tag">$1 <span>/ mo</span></div>
                 </div>
                 <ul class="specs-list">
                     <li><span>RAM</span> <span>512 MB 🔋</span></li>
                     <li><span>Storage</span> <span>5 GB 💽</span></li>
                     <li><span>Uptime</span> <span>24/7 Online 🟢</span></li>
-                    <li><span>Node.js / Python</span> <span>Supported 🤖</span></li>
+                    <li><span>Database</span> <span>Included 🗄️</span></li>
                 </ul>
                 <div class="payment-box">
                     <span class="usd-price">$1</span>
@@ -681,7 +685,7 @@
                 <div class="popular-badge">⭐ Best Choice</div>
                 <div class="card-header">
                     <h3>Bot Pro</h3>
-                    <div class="price-tag" style="color: #60a5fa;">$2 <span>/ month</span></div>
+                    <div class="price-tag" style="color: #60a5fa;">$2 <span>/ mo</span></div>
                 </div>
                 <ul class="specs-list">
                     <li><span>RAM</span> <span>1 GB 🔋</span></li>
@@ -699,13 +703,13 @@
             <div class="price-card">
                 <div class="card-header">
                     <h3>Bot Ultra</h3>
-                    <div class="price-tag">$3.5 <span>/ month</span></div>
+                    <div class="price-tag">$3.5 <span>/ mo</span></div>
                 </div>
                 <ul class="specs-list">
                     <li><span>RAM</span> <span>2 GB 🔋</span></li>
                     <li><span>Storage</span> <span>20 GB 💽</span></li>
-                    <li><span>Uptime</span> <span>24/7 Online 🟢</span></li>
                     <li><span>CPU</span> <span>Priority Cores ⚙️</span></li>
+                    <li><span>Database</span> <span>Included 🗄️</span></li>
                 </ul>
                 <div class="payment-box">
                     <span class="usd-price">$3.5</span>
@@ -717,13 +721,13 @@
             <div class="price-card">
                 <div class="card-header">
                     <h3>Bot Enterprise</h3>
-                    <div class="price-tag">$5 <span>/ month</span></div>
+                    <div class="price-tag">$5 <span>/ mo</span></div>
                 </div>
                 <ul class="specs-list">
                     <li><span>RAM</span> <span>4 GB 🔋</span></li>
                     <li><span>Storage</span> <span>35 GB 💽</span></li>
-                    <li><span>Uptime</span> <span>24/7 Online 🟢</span></li>
                     <li><span>Performance</span> <span>Max Power 🚀</span></li>
+                    <li><span>Database</span> <span>Included 🗄️</span></li>
                 </ul>
                 <div class="payment-box">
                     <span class="usd-price">$5</span>
@@ -734,9 +738,171 @@
         </div>
     </div>
 
+    <!-- PAGE 6: VPS HOSTING -->
+    <div id="page-vps" class="page">
+        <h2 class="section-title">Host VPS Plans</h2>
+        <p class="section-subtitle">Full root access, high-speed NVMe VPS for custom setups and applications</p>
+        
+        <div class="pricing-grid">
+            <div class="price-card">
+                <div class="card-header">
+                    <h3>VPS Starter</h3>
+                    <div class="price-tag">$3 <span>/ mo</span></div>
+                </div>
+                <ul class="specs-list">
+                    <li><span>CPU</span> <span>1 vCPU 💻</span></li>
+                    <li><span>RAM</span> <span>2 GB 🔋</span></li>
+                    <li><span>NVMe Storage</span> <span>25 GB 💽</span></li>
+                    <li><span>Access</span> <span>Full Root SSH 🔐</span></li>
+                </ul>
+                <div class="payment-box">
+                    <span class="usd-price">$3</span>
+                    <div class="payment-methods">Binance<br>Ooredoo: <strong>16.5 DT</strong></div>
+                </div>
+                <a href="https://discord.gg/Spbt6mxzFD" target="_blank" class="btn-order btn-default">Order Now</a>
+            </div>
+
+            <div class="price-card popular">
+                <div class="popular-badge">⭐ Recommended</div>
+                <div class="card-header">
+                    <h3>VPS Pro</h3>
+                    <div class="price-tag" style="color: #60a5fa;">$6 <span>/ mo</span></div>
+                </div>
+                <ul class="specs-list">
+                    <li><span>CPU</span> <span>2 vCPU 💻</span></li>
+                    <li><span>RAM</span> <span>4 GB 🔋</span></li>
+                    <li><span>NVMe Storage</span> <span>50 GB 💽</span></li>
+                    <li><span>Access</span> <span>Full Root SSH 🔐</span></li>
+                </ul>
+                <div class="payment-box">
+                    <span class="usd-price" style="color: #60a5fa;">$6</span>
+                    <div class="payment-methods">Binance<br>Ooredoo: <strong>33 DT</strong></div>
+                </div>
+                <a href="https://discord.gg/Spbt6mxzFD" target="_blank" class="btn-order btn-highlight">Order Now</a>
+            </div>
+
+            <div class="price-card">
+                <div class="card-header">
+                    <h3>VPS Ultra</h3>
+                    <div class="price-tag">$10 <span>/ mo</span></div>
+                </div>
+                <ul class="specs-list">
+                    <li><span>CPU</span> <span>4 vCPU 💻</span></li>
+                    <li><span>RAM</span> <span>8 GB 🔋</span></li>
+                    <li><span>NVMe Storage</span> <span>100 GB 💽</span></li>
+                    <li><span>Access</span> <span>Full Root SSH 🔐</span></li>
+                </ul>
+                <div class="payment-box">
+                    <span class="usd-price">$10</span>
+                    <div class="payment-methods">Binance<br>Ooredoo: <strong>55 DT</strong></div>
+                </div>
+                <a href="https://discord.gg/Spbt6mxzFD" target="_blank" class="btn-order btn-default">Order Now</a>
+            </div>
+
+            <div class="price-card">
+                <div class="card-header">
+                    <h3>VPS Beast</h3>
+                    <div class="price-tag">$18 <span>/ mo</span></div>
+                </div>
+                <ul class="specs-list">
+                    <li><span>CPU</span> <span>6 vCPU 💻</span></li>
+                    <li><span>RAM</span> <span>16 GB 🔋</span></li>
+                    <li><span>NVMe Storage</span> <span>160 GB 💽</span></li>
+                    <li><span>Access</span> <span>Full Root SSH 🔐</span></li>
+                </ul>
+                <div class="payment-box">
+                    <span class="usd-price">$18</span>
+                    <div class="payment-methods">Binance<br>Ooredoo: <strong>99 DT</strong></div>
+                </div>
+                <a href="https://discord.gg/Spbt6mxzFD" target="_blank" class="btn-order btn-default">Order Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 7: WEB HOSTING -->
+    <div id="page-web" class="page">
+        <h2 class="section-title">Web Hosting Plans</h2>
+        <p class="section-subtitle">Fast, secure web hosting with free SSL, MySQL and custom domains</p>
+        
+        <div class="pricing-grid">
+            <div class="price-card">
+                <div class="card-header">
+                    <h3>Web Starter</h3>
+                    <div class="price-tag">$1 <span>/ mo</span></div>
+                </div>
+                <ul class="specs-list">
+                    <li><span>Domains</span> <span>1 Website 🌐</span></li>
+                    <li><span>SSD Storage</span> <span>10 GB 💽</span></li>
+                    <li><span>Databases</span> <span>2 MySQL 🗄️</span></li>
+                    <li><span>SSL Certificate</span> <span>Free 🔒</span></li>
+                </ul>
+                <div class="payment-box">
+                    <span class="usd-price">$1</span>
+                    <div class="payment-methods">Binance<br>Ooredoo: <strong>5.5 DT</strong></div>
+                </div>
+                <a href="https://discord.gg/Spbt6mxzFD" target="_blank" class="btn-order btn-default">Order Now</a>
+            </div>
+
+            <div class="price-card popular">
+                <div class="popular-badge">⭐ Best Choice</div>
+                <div class="card-header">
+                    <h3>Web Business</h3>
+                    <div class="price-tag" style="color: #60a5fa;">$2 <span>/ mo</span></div>
+                </div>
+                <ul class="specs-list">
+                    <li><span>Domains</span> <span>3 Websites 🌐</span></li>
+                    <li><span>SSD Storage</span> <span>30 GB 💽</span></li>
+                    <li><span>Databases</span> <span>Unlimited 🗄️️</span></li>
+                    <li><span>SSL Certificate</span> <span>Free 🔒</span></li>
+                </ul>
+                <div class="payment-box">
+                    <span class="usd-price" style="color: #60a5fa;">$2</span>
+                    <div class="payment-methods">Binance<br>Ooredoo: <strong>11 DT</strong></div>
+                </div>
+                <a href="https://discord.gg/Spbt6mxzFD" target="_blank" class="btn-order btn-highlight">Order Now</a>
+            </div>
+
+            <div class="price-card">
+                <div class="card-header">
+                    <h3>Web Pro</h3>
+                    <div class="price-tag">$4 <span>/ mo</span></div>
+                </div>
+                <ul class="specs-list">
+                    <li><span>Domains</span> <span>Unlimited 🌐</span></li>
+                    <li><span>SSD Storage</span> <span>80 GB 💽</span></li>
+                    <li><span>Databases</span> <span>Unlimited 🗄️</span></li>
+                    <li><span>SSL Certificate</span> <span>Free 🔒</span></li>
+                </ul>
+                <div class="payment-box">
+                    <span class="usd-price">$4</span>
+                    <div class="payment-methods">Binance<br>Ooredoo: <strong>22 DT</strong></div>
+                </div>
+                <a href="https://discord.gg/Spbt6mxzFD" target="_blank" class="btn-order btn-default">Order Now</a>
+            </div>
+
+            <div class="price-card">
+                <div class="card-header">
+                    <h3>Web Enterprise</h3>
+                    <div class="price-tag">$7 <span>/ mo</span></div>
+                </div>
+                <ul class="specs-list">
+                    <li><span>Domains</span> <span>Unlimited 🌐</span></li>
+                    <li><span>SSD Storage</span> <span>150 GB 💽</span></li>
+                    <li><span>Performance</span> <span>Dedicated RAM ⚡</span></li>
+                    <li><span>SSL Certificate</span> <span>Free 🔒</span></li>
+                </ul>
+                <div class="payment-box">
+                    <span class="usd-price">$7</span>
+                    <div class="payment-methods">Binance<br>Ooredoo: <strong>38.5 DT</strong></div>
+                </div>
+                <a href="https://discord.gg/Spbt6mxzFD" target="_blank" class="btn-order btn-default">Order Now</a>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer>
-        <p>Powered by Pedra Squad • Pedra Hosting © 2026</p>
+        <p>Powered by Sanfour Squad • R4X Hosting © 2026</p>
     </footer>
 
     <!-- JavaScript -->
